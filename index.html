@@ -229,6 +229,129 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/idx9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/13/idx9/" itemprop="url">关于文档流以及内联元素与块元素的高度问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T22:59:52+08:00">
+                2018-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-文档流是什么意思？"><a href="#1-文档流是什么意思？" class="headerlink" title="1. 文档流是什么意思？"></a>1. 文档流是什么意思？</h2><p>文档流就是文档内元素的流动方向。内联元素是从左往右以此排列的，当宽度不够的时候回自动折行。块元素是从上往下排列的，并且独占一行。这种内联元素与块元素的排列方式就构成了文档流。</p>
+<h2 id="2-块元素的高度是由什么决定的？"><a href="#2-块元素的高度是由什么决定的？" class="headerlink" title="2. 块元素的高度是由什么决定的？"></a>2. 块元素的高度是由什么决定的？</h2><p>块元素的高度是由其内部文档流元素的高度总和决定，但不一定相等。并且脱离文档流的元素不会影响块元素的高度。</p>
+<h2 id="3-font-size究竟设置的是字体哪部分的长度？"><a href="#3-font-size究竟设置的是字体哪部分的长度？" class="headerlink" title="3. font-size究竟设置的是字体哪部分的长度？"></a>3. font-size究竟设置的是字体哪部分的长度？</h2><p><img src="/2018/05/13/idx9/line.jpg" alt=""><br>可以看到英文字母在四线格中的高度明显不同，我们设置的font-size默认设置的是字母最高的部分到字母最低的部分之间的距离，如’h’的顶部到’j’的底部之间的距离。文字的对其方式默认是以基线对其的，也就是’a’的底部这条水平线。</p>
+<h2 id="3-内联元素的高度是由什么决定的？"><a href="#3-内联元素的高度是由什么决定的？" class="headerlink" title="3. 内联元素的高度是由什么决定的？"></a>3. 内联元素的高度是由什么决定的？</h2><p>内联元素的高度一般与字体的建议行高以及字体设计师的设计有关，无法精确确定。当设置的line-height，也就是行高值比font-size大的多时，行高就是内联元素的高度。但是这个’大的多’具体大多少也无法确定。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/idx8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1292,7 +1415,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1305,7 +1428,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
