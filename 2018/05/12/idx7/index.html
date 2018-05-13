@@ -1,230 +1,682 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+
+
 
   
-  <title>HTML几个重要标签细节问题 | Cubic Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="a标签a标签取名于是’anchor’的第一个字母，它的主要属性有href(不可少)以及target(可省)，当href属性值以#开头时，主要用于页面内锚点跳转；当值以’//‘开头时，为省略协议的写法，浏览器在地址栏会自动补全协议，补全的协议与当前页面协议相同；当值以’http://‘开头时，就会访问外部资源；还可以使用javascript伪协议阻止a标签的默认跳转，写法可以是’javascript">
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="a标签a标签取名于是’anchor’的第一个字母，它的主要属性有href(不可少)以及target(可省)，当href属性值以#开头时，主要用于页面内锚点跳转；当值以’//‘开头时，为省略协议的写法，浏览器在地址栏会自动补全协议，补全的协议与当前页面协议相同；当值以’http://‘开头时，就会访问外部资源；还可以使用javascript伪协议阻止a标签的默认跳转，写法可以是’javascript">
 <meta name="keywords" content="html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML几个重要标签细节问题">
 <meta property="og:url" content="http://yoursite.com/2018/05/12/idx7/index.html">
 <meta property="og:site_name" content="Cubic Blog">
 <meta property="og:description" content="a标签a标签取名于是’anchor’的第一个字母，它的主要属性有href(不可少)以及target(可省)，当href属性值以#开头时，主要用于页面内锚点跳转；当值以’//‘开头时，为省略协议的写法，浏览器在地址栏会自动补全协议，补全的协议与当前页面协议相同；当值以’http://‘开头时，就会访问外部资源；还可以使用javascript伪协议阻止a标签的默认跳转，写法可以是’javascript">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/05/12/idx7/sandbox.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/05/12/idx7/col.jpg">
-<meta property="og:updated_time" content="2018-05-12T14:53:01.220Z">
+<meta property="og:updated_time" content="2018-05-12T15:25:53.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML几个重要标签细节问题">
 <meta name="twitter:description" content="a标签a标签取名于是’anchor’的第一个字母，它的主要属性有href(不可少)以及target(可省)，当href属性值以#开头时，主要用于页面内锚点跳转；当值以’//‘开头时，为省略协议的写法，浏览器在地址栏会自动补全协议，补全的协议与当前页面协议相同；当值以’http://‘开头时，就会访问外部资源；还可以使用javascript伪协议阻止a标签的默认跳转，写法可以是’javascript">
 <meta name="twitter:image" content="http://yoursite.com/2018/05/12/idx7/sandbox.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/12/idx7/"/>
+
+
+
+
+
+  <title>HTML几个重要标签细节问题 | Cubic Blog</title>
   
-    <link rel="alternate" href="/atom.xml" title="Cubic Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+
+
+
+
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Cubic Blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">个人博客，专注前端</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-idx7" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/12/idx7/" class="article-date">
-  <time datetime="2018-05-12T13:57:00.000Z" itemprop="datePublished">2018-05-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
-    <h1 class="article-title" itemprop="name">
-      HTML几个重要标签细节问题
-    </h1>
+  
+    
   
 
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cubic Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">个人博客，专注前端</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/12/idx7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML几个重要标签细节问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-12T21:57:00+08:00">
+                2018-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h3 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h3><p>a标签取名于是’anchor’的第一个字母，它的主要属性有href(不可少)以及target(可省)，<br>当href属性值以#开头时，主要用于页面内锚点跳转；当值以’//‘开头时，为省略协议的写法，浏览器在地址栏会自动补全协议，补全的协议与当前页面协议相同；当值以’http://‘开头时，就会访问外部资源；还可以使用javascript伪协议阻止a标签的默认跳转，写法可以是’javascript:;’以及’javascript:void(0);’,还可以在’javascript:’之后加一个javascript语句，点击a标签就会执行这个语句。<br>target的常见属性值为’_self,_blank,_parent,_top’,’_self’是默认值，在当前页面完成跳转，’_blank’会打开一个新窗口跳转，后两个只有当页面中存在嵌套的iframe才能显示效果，分别表示在父窗口跳转和顶级窗口跳转，当父窗口就是顶级窗口时，两个值没什么区别。如果要修改a标签的默认跳转方式，可以在head中加一句’&lt;base target=”_blank”&gt;’,就会将默认跳转方式设为在新窗口中跳转。当页面中存在iframe,并且iframe设置了name属性，a标签的target值可以设置为iframe的name属性值，这样的话点击a标签就会在ifame中显示跳转的内容。</p>
-<h3 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h3><p>iframe默认会带一个丑陋的边框，所以要去掉的话最好加上frameborder=”0”属性。ifame有一个比较特殊的sandbox属性，读作‘沙盒’属性比较好记。它主要是限制嵌套页面的一些权限，IE9以下不支持。它的主要属性如下：<br><img src="/2018/05/12/idx7/sandbox.jpg" alt=""><br>一般我们使用的话设置sandbox=’’就可以了，主要出于安全策略的考虑，防止我们的页面收到嵌套页面的攻击，脚本攻击以及表单提交，DOM内容窃取等。</p>
+      
+
+      
+        <h3 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h3><p>a标签取名于是’anchor’的第一个字母，它的主要属性有href(不可少)以及target(可省)，当href属性值以#开头时，主要用于页面内锚点跳转；当值以’//‘开头时，为省略协议的写法，浏览器在地址栏会自动补全协议，补全的协议与当前页面协议相同；当值以’http://‘开头时，就会访问外部资源；还可以使用javascript伪协议阻止a标签的默认跳转，写法可以是’javascript:;’以及’javascript:void(0);’,还可以在’javascript:’之后加一个javascript语句，点击a标签就会执行这个语句。<br>target的常见属性值为’_self,_blank,_parent,_top’,’_self’是默认值，在当前页面完成跳转，’_blank’会打开一个新窗口跳转，后两个只有当页面中存在嵌套的iframe才能显示效果，分别表示在父窗口跳转和顶级窗口跳转，当父窗口就是顶级窗口时，两个值没什么区别。如果要修改a标签的默认跳转方式，可以在head中加一句’&lt;base target=”_blank”&gt;’,就会将默认跳转方式设为在新窗口中跳转。当页面中存在iframe,并且iframe设置了name属性，a标签的target值可以设置为iframe的name属性值，这样的话点击a标签就会在ifame中显示跳转的内容。</p>
+<h3 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h3><p>iframe默认会带一个丑陋的边框，所以要去掉的话最好加上frameborder=”0”属性。ifame有一个比较特殊的sandbox属性，读作‘沙盒’属性比较好记。它主要是限制嵌套页面的一些权限，IE9以下不支持。它的主要属性如下：<br><img src="/2018/05/12/idx7/sandbox.jpg" alt=""><br>一般我们使用的话设置sandbox=’’就可以了，主要出于安全策略的考虑，防止我们的页面受到嵌套页面的攻击，脚本攻击以及表单提交，DOM内容窃取等。</p>
 <h3 id="table标签"><a href="#table标签" class="headerlink" title="table标签"></a>table标签</h3><p>table标签的直接子元素只有thead、tbody、tfoot以及colgroup四个，没有其他的。thead主要用于放置表头内容，tbody是表格的主体部分，tfoot是表格的结尾部分，三个在位置上应该排列有先后，但是即使你打乱顺序排列，浏览器在渲染是还是会根据表头，主体，结尾的顺序展示。这三个标签都是可以省略的，但是缺少tbody的话，浏览器会自动加上。并且不在这三个标签的元素会自动并入到tbody中。colgroup用于设置每列的一些属性，搭配col标签使用，写法如下：<br><img src="/2018/05/12/idx7/col.jpg" alt=""><br>测试了下只有width以及bgcolor属性支持的比较好，因此主要用于设置每列的宽度或背景颜色。</p>
 <h3 id="如何用a标签下载资源"><a href="#如何用a标签下载资源" class="headerlink" title="如何用a标签下载资源"></a>如何用a标签下载资源</h3><p>通常有两种方式，一种是需要后端的配合。后端向客户端发送数据时在响应头中设置Content-Type属性值为application/octet-stream。另一种是强制a标签进行下载，只要a标签设置一个download属性就可以啦，是不是很简单！</p>
 <h3 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h3><p>form表单提交方式有两种，一种是通过js代码实现，另一种是通过提交按钮实现。提交按钮有两种，一种是input类型的按钮，一定要设置type=submit属性，另一种是button类型的按钮，不写type的话默认是submit按钮，可以给它设置type=submit强调下。form表单的method属性只能设置为post或get，其他的put，patch等不能设置，没有效果。当设置为get时，表单中的数据以请求参数的方式发送，在地址栏中显示。而采用post方式时，表单中的数据以Form Data的形式放在请求头的第四部分。并且可以在action属性值后加’?xxx=yyy’的形式添加请求参数。所以get方式只有请求参数，而post方式既可以有请求参数，也可有Form Data第四部分。好啦，今天就写到这儿！</p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/12/idx7/" data-id="cjh3imt620008povnplpehbin" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/12/idx6/" rel="next" title="什么是可替换元素">
+                <i class="fa fa-chevron-left"></i> 什么是可替换元素
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/13/idx8/" rel="prev" title="HTML常用标签介绍">
+                HTML常用标签介绍 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
   </div>
   
-    
-<nav id="article-nav">
   
   
-    <a href="/2018/05/12/idx6/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">什么是可替换元素</div>
-    </a>
-  
-</nav>
+  </article>
 
-  
-</article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端面试题/">前端面试题</a></li></ul>
+    <div class="post-spread">
+      
     </div>
   </div>
 
 
+          </div>
+          
+
+
+          
+
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/前端面试题/" style="font-size: 10px;">前端面试题</a>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
-  
+  <aside id="sidebar" class="sidebar">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Qian YJ</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#a标签"><span class="nav-number">1.</span> <span class="nav-text">a标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe标签"><span class="nav-number">2.</span> <span class="nav-text">iframe标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#table标签"><span class="nav-number">3.</span> <span class="nav-text">table标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何用a标签下载资源"><span class="nav-number">4.</span> <span class="nav-text">如何用a标签下载资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#form标签"><span class="nav-number">5.</span> <span class="nav-text">form标签</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
     </div>
-  </div>
+  </aside>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/05/12/idx7/">HTML几个重要标签细节问题</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/12/idx6/">什么是可替换元素</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/11/idx5/">HTTP协议</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/11/idx4/">git入门三命令</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/11/idx3/">linux常用命令</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
-      <footer id="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qian YJ</span>
+
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 Qian YJ<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>

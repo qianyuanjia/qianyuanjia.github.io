@@ -1,177 +1,690 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+
+
 
   
-  <title>Cubic Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Cubic Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Cubic Blog">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cubic Blog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>Cubic Blog</title>
   
-    <link rel="alternate" href="/atom.xml" title="Cubic Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+
+
+
+
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Cubic Blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">个人博客，专注前端</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
-    <article id="post-idx7" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/12/idx7/" class="article-date">
-  <time datetime="2018-05-12T13:57:00.000Z" itemprop="datePublished">2018-05-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/12/idx7/">HTML几个重要标签细节问题</a>
-    </h1>
+    
   
 
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cubic Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">个人博客，专注前端</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/idx8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/13/idx8/" itemprop="url">HTML常用标签介绍</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T15:23:18+08:00">
+                2018-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h3 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h3><p>a标签取名于是’anchor’的第一个字母，它的主要属性有href(不可少)以及target(可省)，<br>当href属性值以#开头时，主要用于页面内锚点跳转；当值以’//‘开头时，为省略协议的写法，浏览器在地址栏会自动补全协议，补全的协议与当前页面协议相同；当值以’http://‘开头时，就会访问外部资源；还可以使用javascript伪协议阻止a标签的默认跳转，写法可以是’javascript:;’以及’javascript:void(0);’,还可以在’javascript:’之后加一个javascript语句，点击a标签就会执行这个语句。<br>target的常见属性值为’_self,_blank,_parent,_top’,’_self’是默认值，在当前页面完成跳转，’_blank’会打开一个新窗口跳转，后两个只有当页面中存在嵌套的iframe才能显示效果，分别表示在父窗口跳转和顶级窗口跳转，当父窗口就是顶级窗口时，两个值没什么区别。如果要修改a标签的默认跳转方式，可以在head中加一句’&lt;base target=”_blank”&gt;’,就会将默认跳转方式设为在新窗口中跳转。当页面中存在iframe,并且iframe设置了name属性，a标签的target值可以设置为iframe的name属性值，这样的话点击a标签就会在ifame中显示跳转的内容。</p>
-<h3 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h3><p>iframe默认会带一个丑陋的边框，所以要去掉的话最好加上frameborder=”0”属性。ifame有一个比较特殊的sandbox属性，读作‘沙盒’属性比较好记。它主要是限制嵌套页面的一些权限，IE9以下不支持。它的主要属性如下：<br><img src="/2018/05/12/idx7/sandbox.jpg" alt=""><br>一般我们使用的话设置sandbox=’’就可以了，主要出于安全策略的考虑，防止我们的页面收到嵌套页面的攻击，脚本攻击以及表单提交，DOM内容窃取等。</p>
+      
+
+      
+        
+          
+            <h2 id="1-HTML是什么，HTML5是什么？"><a href="#1-HTML是什么，HTML5是什么？" class="headerlink" title="1. HTML是什么，HTML5是什么？"></a>1. HTML是什么，HTML5是什么？</h2><p>HTML是一种被广泛使用的用来创建网页的超文本标记语言。它用各种不同的标签描述了一个网页的结构和内容。HTML不短更新，从最开始的HTML2.0发展到最新的HTML5。HTML5最主要的目的是为了提高语义化，改善开发者和用户对万维网的体验。HTML5提供了许多新的标签和功能强大的API。</p>
+<h2 id="2-HTML有哪些常用的标签？"><a href="#2-HTML有哪些常用的标签？" class="headerlink" title="2. HTML有哪些常用的标签？"></a>2. HTML有哪些常用的标签？</h2><p>HTML中的元素类型可以划分为两类，一类是区块元素（block）,另一类是内联元素（inline）。<br><strong>区块元素：效果上回独占一行的元素。</strong><br><strong>内联元素：不会折行。</strong></p>
+<ul>
+<li><h3 id="文本样式相关的标签"><a href="#文本样式相关的标签" class="headerlink" title="文本样式相关的标签"></a>文本样式相关的标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;b&gt;&lt;/b&gt;文字加粗，已经废弃，不推荐使用</span><br><span class="line">&lt;strong&gt;&lt;/strong&gt;文字加粗并且有语义上的强调，推荐使用</span><br><span class="line">&lt;i&gt;&lt;/i&gt;文字倾斜。</span><br><span class="line">&lt;em&gt;&lt;/em&gt;文字倾斜，并且有强调的语气。</span><br><span class="line">h1~h6标签，描述语义的标签，并且为block元素，不同浏览器中这些标签的margin样式可能不同。</span><br><span class="line">&lt;p&gt;&lt;/P&gt;段落标签，典型的block标签。</span><br><span class="line">&lt;br&gt;换行标签</span><br><span class="line">&lt;hr&gt;输出分割线</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="分区元素"><a href="#分区元素" class="headerlink" title="分区元素"></a>分区元素</h3><p>分区元素常用语页面布局，主要有div和span，这两个标签没有默认的样式，并且分别为块元素和内联元素，因为没有特殊语义，常常需要加class属性用于标识。</p>
+</li>
+<li><p>页面中显示图片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;图片路径&quot; alt=&quot;图片信息&quot;&gt;，这个标签会想服务器发起一个请求，并且加载</span><br><span class="line">图片。它是特殊的inline-block元素，可以设置宽高，但是不会折行显示。alt属性用于</span><br><span class="line">图片加载失败是给用户的提示信息。</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="链接元素"><a href="#链接元素" class="headerlink" title="链接元素"></a>链接元素</h3><blockquote>
+<p>a是inline元素，其中href属性制定了要跳转的url和邮箱（<br>mailto:<a href="mailto:3126731@qq.com" target="_blank" rel="noopener">3126731@qq.com</a>）、javascript的代码。target属性指定了在哪个页面中打开新<br>内容。还可以定位锚点href=”#xxx”，跳转到XXX锚点的位置。</p>
+</blockquote>
+</li>
+<li><h3 id="列表元素"><a href="#列表元素" class="headerlink" title="列表元素"></a>列表元素</h3><blockquote>
+<p>有序列表ol,列表项li<br>无序列表ul，列表项li<br>定义列表dl，dt是类型定义，dd是类型详情</p>
+</blockquote>
+</li>
+<li><h3 id="表单元素"><a href="#表单元素" class="headerlink" title="表单元素"></a>表单元素</h3>form的作用是收集用户的信息，并将其提交给动态页面与后台程序进行交互。<br><form> </form> 典型的区块元素,form本身没有任何的显示效果，只有语义性的概念。action属性指定处理数据的动态页面，action属性基本在任何情况下都不可省略。 method属性也要指定：get（获取资源）、post（向服务器提交）等。enctype的全名是：Encoded Type（表单中提交数据的编码类型），可取值总共有三个：text/plain（表单数据不做任何处理直接上传），application/x-www-form-urlencoded（默认值，把表单中的数据（比如中文字符）编码后再上传，只能对字符进行编码，也就是说只能提交字符数据，如果想提交的是字节数据，必须使用第三项）、multipart/form-data（以一种特殊的格式上传字符/字节数据）<br>&lt;input / &gt; 必须要用type来指定类型，类型分别有：submit、text、password、radio（单选按钮，典型内联元素）、checkbox（复选框），默认是text类型。 典型的内联（inline）元素。 name属性绝对不能省略，name表示的是输入的内容含义。 value属性：在输入框中显示的文字提示，提示用户需要输入的可能值：比如用户名、邮箱等。 maxlength：限制最大输入的字符个数 。更加复杂的设置智能根据JS来做。 readonly：只读属性，关于boolean属性在html 5中有特别的说明，这种属性会提交给服务器。 disabled属性表示禁用（表现形式是相应的框会变成灰色），这种属性的特点是不能提交给服务器。 在其中指定一个id，和下面将要讲到的label标签中的for属性配合使用。 checked写上就表示默认被选择。 </li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/12/idx7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/12/idx7/" itemprop="url">HTML几个重要标签细节问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-12T21:57:00+08:00">
+                2018-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h3><p>a标签取名于是’anchor’的第一个字母，它的主要属性有href(不可少)以及target(可省)，当href属性值以#开头时，主要用于页面内锚点跳转；当值以’//‘开头时，为省略协议的写法，浏览器在地址栏会自动补全协议，补全的协议与当前页面协议相同；当值以’http://‘开头时，就会访问外部资源；还可以使用javascript伪协议阻止a标签的默认跳转，写法可以是’javascript:;’以及’javascript:void(0);’,还可以在’javascript:’之后加一个javascript语句，点击a标签就会执行这个语句。<br>target的常见属性值为’_self,_blank,_parent,_top’,’_self’是默认值，在当前页面完成跳转，’_blank’会打开一个新窗口跳转，后两个只有当页面中存在嵌套的iframe才能显示效果，分别表示在父窗口跳转和顶级窗口跳转，当父窗口就是顶级窗口时，两个值没什么区别。如果要修改a标签的默认跳转方式，可以在head中加一句’&lt;base target=”_blank”&gt;’,就会将默认跳转方式设为在新窗口中跳转。当页面中存在iframe,并且iframe设置了name属性，a标签的target值可以设置为iframe的name属性值，这样的话点击a标签就会在ifame中显示跳转的内容。</p>
+<h3 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h3><p>iframe默认会带一个丑陋的边框，所以要去掉的话最好加上frameborder=”0”属性。ifame有一个比较特殊的sandbox属性，读作‘沙盒’属性比较好记。它主要是限制嵌套页面的一些权限，IE9以下不支持。它的主要属性如下：<br><img src="/2018/05/12/idx7/sandbox.jpg" alt=""><br>一般我们使用的话设置sandbox=’’就可以了，主要出于安全策略的考虑，防止我们的页面受到嵌套页面的攻击，脚本攻击以及表单提交，DOM内容窃取等。</p>
 <h3 id="table标签"><a href="#table标签" class="headerlink" title="table标签"></a>table标签</h3><p>table标签的直接子元素只有thead、tbody、tfoot以及colgroup四个，没有其他的。thead主要用于放置表头内容，tbody是表格的主体部分，tfoot是表格的结尾部分，三个在位置上应该排列有先后，但是即使你打乱顺序排列，浏览器在渲染是还是会根据表头，主体，结尾的顺序展示。这三个标签都是可以省略的，但是缺少tbody的话，浏览器会自动加上。并且不在这三个标签的元素会自动并入到tbody中。colgroup用于设置每列的一些属性，搭配col标签使用，写法如下：<br><img src="/2018/05/12/idx7/col.jpg" alt=""><br>测试了下只有width以及bgcolor属性支持的比较好，因此主要用于设置每列的宽度或背景颜色。</p>
 <h3 id="如何用a标签下载资源"><a href="#如何用a标签下载资源" class="headerlink" title="如何用a标签下载资源"></a>如何用a标签下载资源</h3><p>通常有两种方式，一种是需要后端的配合。后端向客户端发送数据时在响应头中设置Content-Type属性值为application/octet-stream。另一种是强制a标签进行下载，只要a标签设置一个download属性就可以啦，是不是很简单！</p>
 <h3 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h3><p>form表单提交方式有两种，一种是通过js代码实现，另一种是通过提交按钮实现。提交按钮有两种，一种是input类型的按钮，一定要设置type=submit属性，另一种是button类型的按钮，不写type的话默认是submit按钮，可以给它设置type=submit强调下。form表单的method属性只能设置为post或get，其他的put，patch等不能设置，没有效果。当设置为get时，表单中的数据以请求参数的方式发送，在地址栏中显示。而采用post方式时，表单中的数据以Form Data的形式放在请求头的第四部分。并且可以在action属性值后加’?xxx=yyy’的形式添加请求参数。所以get方式只有请求参数，而post方式既可以有请求参数，也可有Form Data第四部分。好啦，今天就写到这儿！</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/12/idx7/" data-id="cjh3imt620008povnplpehbin" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-idx6" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/12/idx6/" class="article-date">
-  <time datetime="2018-05-12T08:54:59.000Z" itemprop="datePublished">2018-05-12</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/12/idx6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/12/idx6/">什么是可替换元素</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/12/idx6/" itemprop="url">什么是可替换元素</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-12T16:54:59+08:00">
+                2018-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h3 id="MDN的解释"><a href="#MDN的解释" class="headerlink" title="MDN的解释"></a>MDN的解释</h3><p>CSS 里，可替换元素（replaced element）的展现不是由CSS来控制的。这些元素是一类 外观渲染独立于CSS的 外部对象。 典型的可替换元素有 &lt;img&gt;、 &lt;object&gt;、&lt;vedio&gt; 和 表单元素，如&lt;textarea&gt;、 &lt;input&gt; 。 某些元素只在一些特殊情况下表现为可替换元素，例如 &lt;audio&gt; 和 &lt;canvas&gt; 。 通过 CSS content 属性来插入的对象 被称作 匿名可替换元素（anonymous replaced elements）。这个解释看的我一脸懵逼，所以还是自己找资料来说明一下。</p>
+      
+
+      
+        
+          
+            <h3 id="MDN的解释"><a href="#MDN的解释" class="headerlink" title="MDN的解释"></a>MDN的解释</h3><p>CSS 里，可替换元素（replaced element）的展现不是由CSS来控制的。这些元素是一类 外观渲染独立于CSS的 外部对象。 典型的可替换元素有 &lt;img&gt;、 &lt;object&gt;、&lt;vedio&gt; 和 表单元素，如&lt;textarea&gt;、 &lt;input&gt; 。 某些元素只在一些特殊情况下表现为可替换元素，例如 &lt;audio&gt; 和 &lt;canvas&gt; 。 通过 CSS content 属性来插入的对象 被称作 匿名可替换元素（anonymous replaced elements）。这个解释看的我一脸懵逼，所以还是自己找资料来说明一下。</p>
 <h3 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h3><p>当我们使用div,span等元素时，它们的具体内容是由元素标签标签之间所添加的内容决定的。当我们使用img时，它的内容是由src指向的资源决定；当我们使用input时，它所表现的形式是由type以及value属性决定的，现在你差不多理解了吧，所谓可替换元素是指浏览器可以根据标签的类型以及属性来呈现不同的表现形式，而非替换元素是指它们的内容是直接写在标签之间的，所见即所得。 &lt;img&gt;、&lt;input&gt;、&lt;textarea&gt;、&lt;select&gt;、&lt;object&gt;等元素是可替换元素，可替换元素一般具有src或type属性，可以指向不同的类型和资源。</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/12/idx6/" data-id="cjh3imt640009povn5iwldke0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-idx5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/11/idx5/" class="article-date">
-  <time datetime="2018-05-11T15:39:00.000Z" itemprop="datePublished">2018-05-11</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/idx5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/11/idx5/">HTTP协议</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/11/idx5/" itemprop="url">HTTP协议</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T23:39:00+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h2 id="HTTP-请求包括哪些部分，如何用Chrome开发者工具查看-HTTP-请求内容"><a href="#HTTP-请求包括哪些部分，如何用Chrome开发者工具查看-HTTP-请求内容" class="headerlink" title="HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容"></a>HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容</h2><ol>
+      
+
+      
+        
+          
+            <h2 id="HTTP-请求包括哪些部分，如何用Chrome开发者工具查看-HTTP-请求内容"><a href="#HTTP-请求包括哪些部分，如何用Chrome开发者工具查看-HTTP-请求内容" class="headerlink" title="HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容"></a>HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容</h2><ol>
 <li>http请求格式：<ul>
 <li>第一部分<br>如：GET / HTTP/1.1<br>第一个部分包含动作（GET或POST）,请求路径，必须以’/‘开头，包含参数但不包含锚点，以及最后的协议及版本</li>
 <li>第二部分<br>是发送给服务器的各种信息，以’键: 值’的格式发送，如Host: <a href="http://www.baidu.com等，可以有多个这样的键值对。" target="_blank" rel="noopener">www.baidu.com等，可以有多个这样的键值对。</a><br>特别说明：Content-Type: Application/x-www-form-urlencoded<br>Application是应用数据的意思，x-表示尚不列入标准规范的规范的格式，www是万维网的意思，form是表单的意思，而urlencoded表示中文用特殊方式编码。</li>
@@ -196,128 +709,371 @@
 </li>
 </ol>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/11/idx5/" data-id="cjh3imt5z0005povnen8jpoi3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-idx4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/11/idx4/" class="article-date">
-  <time datetime="2018-05-11T07:51:14.000Z" itemprop="datePublished">2018-05-11</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/idx4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/11/idx4/">git入门三命令</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/11/idx4/" itemprop="url">git入门三命令</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T15:51:14+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h2 id="关于git使用的最常用的三个命令"><a href="#关于git使用的最常用的三个命令" class="headerlink" title="关于git使用的最常用的三个命令"></a>关于git使用的最常用的三个命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init 用于初始化仓库，建立本地版本库，使用前需进入仓库目录</span><br><span class="line">git add 用户添加改动的文件到暂存区</span><br><span class="line">git commit -v 用户提交改动的文件到本地版本库，-v参数用于显示所有的diff信息，也就是改动的地方。</span><br></pre></td></tr></table></figure>
+      
+
+      
+        
+          
+            <h2 id="关于git使用的最常用的三个命令"><a href="#关于git使用的最常用的三个命令" class="headerlink" title="关于git使用的最常用的三个命令"></a>关于git使用的最常用的三个命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init 用于初始化仓库，建立本地版本库，使用前需进入仓库目录</span><br><span class="line">git add 用户添加改动的文件到暂存区</span><br><span class="line">git commit -v 用户提交改动的文件到本地版本库，-v参数用于显示所有的diff信息，也就是改动的地方。</span><br></pre></td></tr></table></figure>
 <h2 id="新建test目录用于测试这三个命令"><a href="#新建test目录用于测试这三个命令" class="headerlink" title="新建test目录用于测试这三个命令"></a>新建test目录用于测试这三个命令</h2><ul>
 <li>git init命令<br><img src="/2018/05/11/idx4/gitinit.png" alt=""></li>
 <li>git add命令<br><img src="/2018/05/11/idx4/gitadd.png" alt=""></li>
 <li>git commit命令<br><img src="/2018/05/11/idx4/gitc1.png" alt=""><br><img src="/2018/05/11/idx4/gitc2.png" alt=""></li>
 </ul>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/11/idx4/" data-id="cjh3imt5x0004povnqshmkrpm" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-idx3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/11/idx3/" class="article-date">
-  <time datetime="2018-05-11T07:38:05.000Z" itemprop="datePublished">2018-05-11</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/idx3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/11/idx3/">linux常用命令</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/11/idx3/" itemprop="url">linux常用命令</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T15:38:05+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h2 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls 用于列出当前目录下的所有不以.开头命名的文件和目录</span><br><span class="line">cat 用于查看文件内容</span><br><span class="line">mv 用于移动文件或文件重命名</span><br><span class="line">touch 用于新建文件或修改文件最后跟新时间</span><br></pre></td></tr></table></figure>
+      
+
+      
+        
+          
+            <h2 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls 用于列出当前目录下的所有不以.开头命名的文件和目录</span><br><span class="line">cat 用于查看文件内容</span><br><span class="line">mv 用于移动文件或文件重命名</span><br><span class="line">touch 用于新建文件或修改文件最后跟新时间</span><br></pre></td></tr></table></figure>
 <h2 id="遇到其他不懂的命令"><a href="#遇到其他不懂的命令" class="headerlink" title="遇到其他不懂的命令"></a>遇到其他不懂的命令</h2><p>可以访问explainshell.com这个网站，输入相应的命令以及参数，就会有相应的解释出现。</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/11/idx3/" data-id="cjh3imt5v0003povnash32tam" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-idx2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/11/idx2/" class="article-date">
-  <time datetime="2018-05-11T05:28:02.000Z" itemprop="datePublished">2018-05-11</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/idx2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/11/idx2/">几个小问题</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/11/idx2/" itemprop="url">几个小问题</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T13:28:02+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h2 id="一、HTML是什么？"><a href="#一、HTML是什么？" class="headerlink" title="一、HTML是什么？"></a>一、HTML是什么？</h2><pre><code>HTML（Hyper Text Marrk-up Language），即超文本标记语言，是WWW的描述语言，由Tim-Berners-Lee提出。超文本标记语言是标准通用标记语言的下一个应用，是一种规范，也是一种标准，它通过标记符号来标记要显示的网页中的各个部分。之所以称为‘’超文本‘’,就是因为页面内不仅可以包含文本元素，也可以包含图片、视频、音频等非文字元素。
+      
+
+      
+        
+          
+            <h2 id="一、HTML是什么？"><a href="#一、HTML是什么？" class="headerlink" title="一、HTML是什么？"></a>一、HTML是什么？</h2><pre><code>HTML（Hyper Text Marrk-up Language），即超文本标记语言，是WWW的描述语言，由Tim-Berners-Lee提出。超文本标记语言是标准通用标记语言的下一个应用，是一种规范，也是一种标准，它通过标记符号来标记要显示的网页中的各个部分。之所以称为‘’超文本‘’,就是因为页面内不仅可以包含文本元素，也可以包含图片、视频、音频等非文字元素。
 </code></pre><h2 id="二、HTML5是什么？"><a href="#二、HTML5是什么？" class="headerlink" title="二、HTML5是什么？"></a>二、HTML5是什么？</h2><pre><code>万维网的核心语言，标准通用标记语言的下一个应用超文本标记语言的第五次重大修改，设计的目的是为了在移动设备上支持多媒体。比HTML4新增了很多元素和属性，也废弃了一些元素和属性。HTML5增加了很多语义化的标签，还提供了很多功能化的API，极大的改进了用户与文档的交互方式。
 </code></pre><h2 id="三、对Web标准以及W3C的理解和认识"><a href="#三、对Web标准以及W3C的理解和认识" class="headerlink" title="三、对Web标准以及W3C的理解和认识"></a>三、对Web标准以及W3C的理解和认识</h2><pre><code>标签闭合、标签小写、不乱嵌套、提高搜索机器人的搜索几率、使用外链CSS和js脚本、结构行为表现的分离、文件下载与页面速度更快、内容能被更多用户所访问，内容能被更广泛的设备所访问、更少的代码和组件、容易维护、改版方便，不需要变动页面的内容，提供打印版而不需要复制内容，提高网站易用性。
 </code></pre><h2 id="四、xhtml和html有什么区别"><a href="#四、xhtml和html有什么区别" class="headerlink" title="四、xhtml和html有什么区别"></a>四、xhtml和html有什么区别</h2><pre><code>HTML是一种基本的Web网页设计语言，XHTML是一个基于XML的置标语言，它在书写上比HTML更加规范，严格，但是由于缺乏灵活性不太受开发者的喜爱。
@@ -339,166 +1095,440 @@ important优先级最高。
 </code></pre><h2 id="九、前端页面有那三层构成，分别是什么？"><a href="#九、前端页面有那三层构成，分别是什么？" class="headerlink" title="九、前端页面有那三层构成，分别是什么？"></a>九、前端页面有那三层构成，分别是什么？</h2><pre><code>结构层html，表示层CSS，行为层js
 </code></pre><h2 id="十、主流浏览器的内核？"><a href="#十、主流浏览器的内核？" class="headerlink" title="十、主流浏览器的内核？"></a>十、主流浏览器的内核？</h2><pre><code>ie（ie内核）、火狐（Gecko）、谷歌（webkit）,opera（Presto）
 </code></pre>
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/11/idx2/" data-id="cjh3imt5q0001povn6q02puki" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端面试题/">前端面试题</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-idx1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/11/idx1/" class="article-date">
-  <time datetime="2018-05-11T05:20:21.000Z" itemprop="datePublished">2018-05-11</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/idx1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/11/idx1/">前端推荐学习资料</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/11/idx1/" itemprop="url">前端推荐学习资料</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T13:20:21+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <ol>
+      
+
+      
+        
+          
+            <ol>
 <li>《JavaScript高级程序设计》</li>
 <li>阮一峰JavaScript 标准参考教程<br><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="noopener">教程链接</a></li>
 <li>视频教程<br>饥人谷、妙味课堂视频教程以及李炎恢视频教程</li>
 </ol>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/11/idx1/" data-id="cjh3imt5j0000povn1erj1sd5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+  </section>
 
   
 
 
-</section>
+          </div>
+          
+
+
+          
+
+        </div>
         
-          <aside id="sidebar">
+          
   
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端面试题/">前端面试题</a></li></ul>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
-
-  
+  <aside id="sidebar" class="sidebar">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/前端面试题/" style="font-size: 10px;">前端面试题</a>
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Qian YJ</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
     </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
-    </div>
-  </div>
+  </aside>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/05/12/idx7/">HTML几个重要标签细节问题</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/12/idx6/">什么是可替换元素</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/11/idx5/">HTTP协议</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/11/idx4/">git入门三命令</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/11/idx3/">linux常用命令</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
-      <footer id="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qian YJ</span>
+
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 Qian YJ<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
