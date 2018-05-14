@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Cubic Blog">
 <meta property="og:description" content="1. 左右布局左右布局实现方法有很多，常用的就是给块元素添加浮动，而父元素需要清除浮动，不然会高度塌缩。常见的左右布局实现方法如下，效果链接1234567891011121314151617181920212223242526272829303132&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;utf-8">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-14T12:48:16.430Z">
+<meta property="og:updated_time" content="2018-05-14T12:50:53.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS布局技巧总结">
 <meta name="twitter:description" content="1. 左右布局左右布局实现方法有很多，常用的就是给块元素添加浮动，而父元素需要清除浮动，不然会高度塌缩。常见的左右布局实现方法如下，效果链接1234567891011121314151617181920212223242526272829303132&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;quot;utf-8">
@@ -327,7 +327,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;height:30px;line-height:20px;&quot;&gt;</span><br><span class="line">    &lt;span style=&quot;font-size:16px;padding:5px 0;&quot;&gt;hello&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>块元素实现水平垂直居中可以通过绝对定位实现,然后top和left各回退自身宽高的一半。比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;out&quot; style=&quot;width:400px;height:400px;background: red;position:relative;&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;in&quot; style=&quot;width:200px;height:200px;position:absolute;top:50%;left:50%;margin-top:-100px;margin-left:-100px;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;width:400px;height:400px;background: red;position:relative;&quot;&gt;</span><br><span class="line">    &lt;div style=&quot;width:200px;height:200px;position:absolute;</span><br><span class="line">    top:50%;left:50%;margin-top:-100px;margin-left:-100px;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="5-其他注意点"><a href="#5-其他注意点" class="headerlink" title="5. 其他注意点"></a>5. 其他注意点</h3><p>当为元素设置display：inline-block时，最好搭配vertical-align:top一起设置，因为有时会出现底部空白间距的bug。能不对元素设置宽高就不要设置，宽高是很多bug的源头，尽量提高内部文档流元素宽高实现自适应。</p>
