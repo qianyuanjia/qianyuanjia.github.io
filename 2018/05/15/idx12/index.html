@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容 http请求格式： 第一部分如：GET / HTTP/1.1第一个部分包含动作（GET或POST）,请求路径，必须以’/‘开头，包含参数但不包含锚点，以及最后的协议及版本 第二部分是发送给服务器的各种信息，以’键: 值’的格式发送，如Host: www.baidu.com等，可以有多个这样的键值对。特别说明：Cont">
+<meta name="description" content="状态码 英文解释 具体含义     200 OK 请求成功   201 Created 请求已被实现，已经有一个新的资源依据请求的需要被创建，它的URI已经随Location头信息返回。   202 Accepted 服务器已接受请求，但尚未处理。最终请求可能成功执行也可能失败。   203 Non-Authoritiative Information 服务器是一个转换代理器，以200 OK">
 <meta name="keywords" content="http">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP协议">
-<meta property="og:url" content="http://yoursite.com/2018/05/11/idx5/index.html">
+<meta property="og:title" content="几个经常考的HTTP状态码">
+<meta property="og:url" content="http://yoursite.com/2018/05/15/idx12/index.html">
 <meta property="og:site_name" content="Cubic Blog">
-<meta property="og:description" content="HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容 http请求格式： 第一部分如：GET / HTTP/1.1第一个部分包含动作（GET或POST）,请求路径，必须以’/‘开头，包含参数但不包含锚点，以及最后的协议及版本 第二部分是发送给服务器的各种信息，以’键: 值’的格式发送，如Host: www.baidu.com等，可以有多个这样的键值对。特别说明：Cont">
+<meta property="og:description" content="状态码 英文解释 具体含义     200 OK 请求成功   201 Created 请求已被实现，已经有一个新的资源依据请求的需要被创建，它的URI已经随Location头信息返回。   202 Accepted 服务器已接受请求，但尚未处理。最终请求可能成功执行也可能失败。   203 Non-Authoritiative Information 服务器是一个转换代理器，以200 OK">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-11T16:07:39.573Z">
+<meta property="og:updated_time" content="2018-05-15T06:48:06.841Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTTP协议">
-<meta name="twitter:description" content="HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容 http请求格式： 第一部分如：GET / HTTP/1.1第一个部分包含动作（GET或POST）,请求路径，必须以’/‘开头，包含参数但不包含锚点，以及最后的协议及版本 第二部分是发送给服务器的各种信息，以’键: 值’的格式发送，如Host: www.baidu.com等，可以有多个这样的键值对。特别说明：Cont">
+<meta name="twitter:title" content="几个经常考的HTTP状态码">
+<meta name="twitter:description" content="状态码 英文解释 具体含义     200 OK 请求成功   201 Created 请求已被实现，已经有一个新的资源依据请求的需要被创建，它的URI已经随Location头信息返回。   202 Accepted 服务器已接受请求，但尚未处理。最终请求可能成功执行也可能失败。   203 Non-Authoritiative Information 服务器是一个转换代理器，以200 OK">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/11/idx5/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/15/idx12/"/>
 
 
 
 
 
-  <title>HTTP协议 | Cubic Blog</title>
+  <title>几个经常考的HTTP状态码 | Cubic Blog</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/idx5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/idx12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian YJ">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTTP协议</h1>
+          <h1 class="post-title" itemprop="name headline">几个经常考的HTTP状态码</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T23:39:00+08:00">
-                2018-05-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T13:25:59+08:00">
+                2018-05-15
               </time>
             
 
@@ -315,30 +315,132 @@
       
 
       
-        <h2 id="HTTP-请求包括哪些部分，如何用Chrome开发者工具查看-HTTP-请求内容"><a href="#HTTP-请求包括哪些部分，如何用Chrome开发者工具查看-HTTP-请求内容" class="headerlink" title="HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容"></a>HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容</h2><ol>
-<li>http请求格式：<ul>
-<li>第一部分<br>如：GET / HTTP/1.1<br>第一个部分包含动作（GET或POST）,请求路径，必须以’/‘开头，包含参数但不包含锚点，以及最后的协议及版本</li>
-<li>第二部分<br>是发送给服务器的各种信息，以’键: 值’的格式发送，如Host: <a href="http://www.baidu.com等，可以有多个这样的键值对。" target="_blank" rel="noopener">www.baidu.com等，可以有多个这样的键值对。</a><br>特别说明：Content-Type: Application/x-www-form-urlencoded<br>Application是应用数据的意思，x-表示尚不列入标准规范的规范的格式，www是万维网的意思，form是表单的意思，而urlencoded表示中文用特殊方式编码。</li>
-<li>第三部分<br>回车空行，用于分隔第四部分的请求数据</li>
-<li>第四部分<br>是请求时发送的数据，一般只有以’POST’方式请求是才发送数据。</li>
-<li>Chrome开发者工具查看 HTTP 请求内容<br>打开开发者工具，点击Network选项卡，再刷新页面时会将所有的请求显示出来。点击要查看的某个请求，点击其中的Request Header，再点view source可以以原始请求格式显示。<h2 id="HTTP-响应包括哪些部分，如何用Chrome开发者工具查看-HTTP-响应内容"><a href="#HTTP-响应包括哪些部分，如何用Chrome开发者工具查看-HTTP-响应内容" class="headerlink" title="HTTP 响应包括哪些部分，如何用Chrome开发者工具查看 HTTP 响应内容"></a>HTTP 响应包括哪些部分，如何用Chrome开发者工具查看 HTTP 响应内容</h2></li>
-</ul>
-</li>
-<li>http响应格式：<ul>
-<li>第一部分<br>如：HTTP/1.1 200 OK<br>第一部分包含协议及它的版本，http状态码以及状态码解释</li>
-<li>第二部分<br>是服务器发送给浏览器的各种信息，以’键: 值’的格式发送，如Content-Type: text/html等，可以有多个这样的键值对。</li>
-<li>第三部分<br>回车空行，用于分隔第四部分的响应数据</li>
-<li>第四部分<br>是响应返回的数据，一般是html页面内容或css以及其他外部文件内容。</li>
-<li>Chrome开发者工具查看 HTTP 请求内容<br>打开开发者工具，点击Network选项卡，再刷新页面时会将所有的请求显示出来。点击要查看的某个请求，点击其中的Response Header，再点view source可以以原始请求格式显示。</li>
-</ul>
-</li>
-<li><p>如何使用 curl 命令<br>curl命令使用的形式和参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s -v -H &apos;xxx:yyy&apos; -- &apos;http://www.baidu.com&apos;</span><br></pre></td></tr></table></figure>
-<p>-s 表示不显示进度条，-v表示提供更多的输出信息，交互性更好，-H表示设置请求头信息，默认以GET方式请求，若以POST方式请求，使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST [-d &apos;12345&apos;] -s -v -H &apos;xxx:yyy&apos; -- &apos;http://www.baidu.com&apos;</span><br></pre></td></tr></table></figure>
-<p>-d表示请求时发送的数据，可以不写。</p>
-</li>
-</ol>
+        <table>
+<thead>
+<tr>
+<th style="text-align:center">状态码</th>
+<th style="text-align:center">英文解释</th>
+<th style="text-align:left">具体含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">200</td>
+<td style="text-align:center">OK</td>
+<td style="text-align:left">请求成功</td>
+</tr>
+<tr>
+<td style="text-align:center">201</td>
+<td style="text-align:center">Created</td>
+<td style="text-align:left">请求已被实现，已经有一个新的资源依据请求的需要被创建，它的URI已经随Location头信息返回。</td>
+</tr>
+<tr>
+<td style="text-align:center">202</td>
+<td style="text-align:center">Accepted</td>
+<td style="text-align:left">服务器已接受请求，但尚未处理。最终请求可能成功执行也可能失败。</td>
+</tr>
+<tr>
+<td style="text-align:center">203</td>
+<td style="text-align:center">Non-Authoritiative Information</td>
+<td style="text-align:left">服务器是一个转换代理器，以200 OK状态码为起源，但回应了原始响应的修改版本。简单的理解是请求资源被移动或修改，服务器作为代理返回了移动或修改之前的数据。</td>
+</tr>
+<tr>
+<td style="text-align:center">204</td>
+<td style="text-align:center">No Content</td>
+<td style="text-align:left">服务器成功处理了请求，但被有返回任何内容。</td>
+</tr>
+<tr>
+<td style="text-align:center">300</td>
+<td style="text-align:center">Mutiple Choices</td>
+<td style="text-align:left">被请求的资源有一系列可供选择的回馈信息。每个都有自己特定的地址，客户端能自行选择一个首选地址进行重定向。</td>
+</tr>
+<tr>
+<td style="text-align:center">301</td>
+<td style="text-align:center">Moved Permanently</td>
+<td style="text-align:left">被请求的资源已永久移动到新位置，并且将来任何对此资源的引用都应该使用本响应返回的若干个URI之一。</td>
+</tr>
+<tr>
+<td style="text-align:center">302</td>
+<td style="text-align:center">Found</td>
+<td style="text-align:left">要求客户端执行临时重定向。这个重定向是暂时的，之后可以向原有地址发送请求。</td>
+</tr>
+<tr>
+<td style="text-align:center">303</td>
+<td style="text-align:center">See Other</td>
+<td style="text-align:left">对应当前请求的响应可以在另一个URI上被找到，这个方法的存在主要是为了允许由脚本激活的POST请求输出重定向到一个新的资源。</td>
+</tr>
+<tr>
+<td style="text-align:center">304</td>
+<td style="text-align:center">Not Modified</td>
+<td style="text-align:left">表示资源未被修改。在这种情况下，由于客户端仍然具有以前下载的副本，因此不需要重新传输资源。</td>
+</tr>
+<tr>
+<td style="text-align:center">305</td>
+<td style="text-align:center">Use Proxy</td>
+<td style="text-align:left">被请求的资源必须通过制定的代理才能访问。</td>
+</tr>
+<tr>
+<td style="text-align:center">400</td>
+<td style="text-align:center">Bad Request</td>
+<td style="text-align:left">由于明显的客户端错误（例如，请求格式有误），拂去其不能或不会处理该请求。</td>
+</tr>
+<tr>
+<td style="text-align:center">401</td>
+<td style="text-align:center">Unauthorized</td>
+<td style="text-align:left">类似于403 Forbidden，即用户没有必要的凭据。该状态码表示当前请求需要用户验证。该响应必须包含一个适用于被请求资源的WWW-Authenticate信息头用以询问用户信息。客户端可以重复提交一个包含恰当的Authorization头信息的请求。如果当前请求已经包含了Authorization证书，那么401响应代表着服务器验证已经拒绝了那些证书。</td>
+</tr>
+<tr>
+<td style="text-align:center">402</td>
+<td style="text-align:center">Payment Required</td>
+<td style="text-align:left">该状态码是为了将来可能的需求而预留的。该状态码最初的意图可能被用作某种形式的数字现金或在线支付方案的一部分，但是这个状态码通常不被使用。</td>
+</tr>
+<tr>
+<td style="text-align:center">403</td>
+<td style="text-align:center">Forbidden</td>
+<td style="text-align:left">服务器已经理解请求，但是拒绝执行它。与401响应不同的是，身份验证并不能提供任何帮助，而且这个请求也不应该被重复提交。</td>
+</tr>
+<tr>
+<td style="text-align:center">404</td>
+<td style="text-align:center">Not Found</td>
+<td style="text-align:left">请求失败，请求所希望得到的资源未在服务器上发现，但允许用户的后续请求。如果服务器不想让用户获得任何信息，可以返回一个404响应。</td>
+</tr>
+<tr>
+<td style="text-align:center">405</td>
+<td style="text-align:center">Method Not Allowed</td>
+<td style="text-align:left">请求行中指定的请求方法不能被用于请求相应的资源。例如，需要通过POST呈现数据的表单上的GET请求，或只读资源上的PUT请求。</td>
+</tr>
+<tr>
+<td style="text-align:center">500</td>
+<td style="text-align:center">Internet Server Error</td>
+<td style="text-align:left">通用错误消息，服务器遇到了一个未曾预料到的情况，导致了它无法完成对请求的处理，没有给出具体的错误信息。</td>
+</tr>
+<tr>
+<td style="text-align:center">501</td>
+<td style="text-align:center">Not Implemented</td>
+<td style="text-align:left">服务器不支持当前请求所需要的某个功能。当服务器无法是被请求的方法并且无法支持对相应资源的请求是可能会返回该响应。</td>
+</tr>
+<tr>
+<td style="text-align:center">502</td>
+<td style="text-align:center">Bad Gateway</td>
+<td style="text-align:left">作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接受到无效的响应。</td>
+</tr>
+<tr>
+<td style="text-align:center">503</td>
+<td style="text-align:center">Service Unavailable</td>
+<td style="text-align:left">由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是暂时的，并且将在一段时间以后恢复。</td>
+</tr>
+<tr>
+<td style="text-align:center">504</td>
+<td style="text-align:center">Gateway Timeout</td>
+<td style="text-align:left">作为网关或者代理工作的服务器尝试执行请求时，未能及时从上游服务器或者辅助服务器收到响应。</td>
+</tr>
+<tr>
+<td style="text-align:center">505</td>
+<td style="text-align:center">HTTP Version Not Supported</td>
+<td style="text-align:left">服务器不支持，或者拒绝支持在请求中使用的HTTP版本。</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -369,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/11/idx4/" rel="next" title="git入门三命令">
-                <i class="fa fa-chevron-left"></i> git入门三命令
+              <a href="/2018/05/14/idx11/" rel="next" title="CSS布局技巧总结">
+                <i class="fa fa-chevron-left"></i> CSS布局技巧总结
               </a>
             
           </div>
@@ -378,10 +480,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/12/idx6/" rel="prev" title="什么是可替换元素">
-                什么是可替换元素 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -433,17 +531,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -498,22 +587,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-请求包括哪些部分，如何用Chrome开发者工具查看-HTTP-请求内容"><span class="nav-number">1.</span> <span class="nav-text">HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-响应包括哪些部分，如何用Chrome开发者工具查看-HTTP-响应内容"><span class="nav-number">2.</span> <span class="nav-text">HTTP 响应包括哪些部分，如何用Chrome开发者工具查看 HTTP 响应内容</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
