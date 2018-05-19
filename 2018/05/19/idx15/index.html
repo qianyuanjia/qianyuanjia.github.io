@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1. CSS布局css通常的布局方式只有两种，横向布局以及纵向布局，当遇到非线性布局时尽量通过套div的形式拆分成横向布局和纵向布局。 2. CSS块元素水平排列的方法每个子元素左浮动，给父元素加上clearfix类，用于支撑起父元素的高度。12345.clearfix::after&amp;#123;    content:&amp;apos;&amp;apos;;    display:block;    clear">
-<meta name="keywords" content="css">
+<meta name="description" content="js里主要有7种数据类型，分别是数字类型，字符串类型，布尔类型，symbol类型，null，undefined以及对象。 1. 数字类型数字类型也叫‘number’类型，js里面的数字可以为整数，也可以为小数，可以用科学计数法表示数，但不管是整数还是小数，都以64位的浮点数进行存储。js里面小数的算数运算是不精确的，比如‘0.1+0.2=0.30000000000000004’，这点很重要，切记。">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS布局和定位">
-<meta property="og:url" content="http://yoursite.com/2018/05/14/idx10/index.html">
+<meta property="og:title" content="JS里的数据类型">
+<meta property="og:url" content="http://yoursite.com/2018/05/19/idx15/index.html">
 <meta property="og:site_name" content="Cubic Blog">
-<meta property="og:description" content="1. CSS布局css通常的布局方式只有两种，横向布局以及纵向布局，当遇到非线性布局时尽量通过套div的形式拆分成横向布局和纵向布局。 2. CSS块元素水平排列的方法每个子元素左浮动，给父元素加上clearfix类，用于支撑起父元素的高度。12345.clearfix::after&amp;#123;    content:&amp;apos;&amp;apos;;    display:block;    clear">
+<meta property="og:description" content="js里主要有7种数据类型，分别是数字类型，字符串类型，布尔类型，symbol类型，null，undefined以及对象。 1. 数字类型数字类型也叫‘number’类型，js里面的数字可以为整数，也可以为小数，可以用科学计数法表示数，但不管是整数还是小数，都以64位的浮点数进行存储。js里面小数的算数运算是不精确的，比如‘0.1+0.2=0.30000000000000004’，这点很重要，切记。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-14T06:35:55.213Z">
+<meta property="og:updated_time" content="2018-05-19T15:34:27.184Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS布局和定位">
-<meta name="twitter:description" content="1. CSS布局css通常的布局方式只有两种，横向布局以及纵向布局，当遇到非线性布局时尽量通过套div的形式拆分成横向布局和纵向布局。 2. CSS块元素水平排列的方法每个子元素左浮动，给父元素加上clearfix类，用于支撑起父元素的高度。12345.clearfix::after&amp;#123;    content:&amp;apos;&amp;apos;;    display:block;    clear">
+<meta name="twitter:title" content="JS里的数据类型">
+<meta name="twitter:description" content="js里主要有7种数据类型，分别是数字类型，字符串类型，布尔类型，symbol类型，null，undefined以及对象。 1. 数字类型数字类型也叫‘number’类型，js里面的数字可以为整数，也可以为小数，可以用科学计数法表示数，但不管是整数还是小数，都以64位的浮点数进行存储。js里面小数的算数运算是不精确的，比如‘0.1+0.2=0.30000000000000004’，这点很重要，切记。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/14/idx10/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/19/idx15/"/>
 
 
 
 
 
-  <title>CSS布局和定位 | Cubic Blog</title>
+  <title>JS里的数据类型 | Cubic Blog</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/14/idx10/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/idx15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian YJ">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS布局和定位</h1>
+          <h1 class="post-title" itemprop="name headline">JS里的数据类型</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T14:00:52+08:00">
-                2018-05-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T22:54:34+08:00">
+                2018-05-19
               </time>
             
 
@@ -315,12 +315,14 @@
       
 
       
-        <h3 id="1-CSS布局"><a href="#1-CSS布局" class="headerlink" title="1. CSS布局"></a>1. CSS布局</h3><p>css通常的布局方式只有两种，横向布局以及纵向布局，当遇到非线性布局时尽量通过套div的形式拆分成横向布局和纵向布局。</p>
-<h3 id="2-CSS块元素水平排列的方法"><a href="#2-CSS块元素水平排列的方法" class="headerlink" title="2. CSS块元素水平排列的方法"></a>2. CSS块元素水平排列的方法</h3><p>每个子元素左浮动，给父元素加上clearfix类，用于支撑起父元素的高度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::after&#123;</span><br><span class="line">    content:&apos;&apos;;</span><br><span class="line">    display:block;</span><br><span class="line">    clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>虽然可以通过给块元素添加display：inline-block的方式形成水平排列，但是不推荐这样做，你想它们之间万一有回车空格是不是处理起来很麻烦。</p>
-<h3 id="3-CSS定位"><a href="#3-CSS定位" class="headerlink" title="3. CSS定位"></a>3. CSS定位</h3><p>CSS定位，也就是position属性，它的值有四种，分别是static(默认)，absolute，relative,fixed以及sticky。切记relative定位不会使元素脱离文档流，这个经常考到。设置固定、绝对定位的时候，没有设置宽度的块元素经常会塌缩，使宽度自适应内容，这得根据需求妥善处理。</p>
-<h3 id="4-如何用CSS画三角形"><a href="#4-如何用CSS画三角形" class="headerlink" title="4. 如何用CSS画三角形"></a>4. 如何用CSS画三角形</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    div&#123;</span><br><span class="line">      margin-bottom:20px;</span><br><span class="line">    &#125;</span><br><span class="line">    .box&#123;</span><br><span class="line">      border:30px solid transparent;</span><br><span class="line">      width:0;</span><br><span class="line">      border-color: red blue green yellow;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /* 向上的三角形 */</span><br><span class="line"></span><br><span class="line">    .top&#123;</span><br><span class="line">      border:30px solid transparent;</span><br><span class="line">      width:0;</span><br><span class="line">      border-bottom-color:green;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /* 向下的三角形 */</span><br><span class="line"></span><br><span class="line">    .bottom&#123;</span><br><span class="line">      border:30px solid transparent;</span><br><span class="line">      width:0;</span><br><span class="line">      border-top-color:green;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /* 向左的三角形 */</span><br><span class="line"></span><br><span class="line">    .left&#123;</span><br><span class="line">      border:30px solid transparent;</span><br><span class="line">      width:0;</span><br><span class="line">      border-left-color:green;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    /* 向右的三角形 */</span><br><span class="line"></span><br><span class="line">    .right&#123;</span><br><span class="line">      border:30px solid transparent;</span><br><span class="line">      width:0;</span><br><span class="line">      border-right-color:green;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;top&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;bottom&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="5-为什么border-radius设置50-和100-没有区别？"><a href="#5-为什么border-radius设置50-和100-没有区别？" class="headerlink" title="5. 为什么border-radius设置50%和100%没有区别？"></a>5. 为什么border-radius设置50%和100%没有区别？</h3><p>我遇到这种情况，你应该也会碰到，当将一个宽高相等的div设置border-radius为50%时，它就显示为圆形，这是我们通过常用来做圆形边框的写法。但是当你设置为大于50%时，你就会惊奇的发现，他跟你想象中的不同，没有发生任何变化，还是显示一个圆形。关于这点，是因为当浏览器发现相邻角的半径和大于元素宽或者高时，就会同时缩放相邻角的半径，直到他们的半径和与宽或高相等。<br>举个栗子，当你设置左上角border-radius为60%，右上角也设为60%,它们的半径和为120%,大于宽度100%，那么浏览器渲染的时候就会同时缩小两个角度半径直到50%,宽度100%恰好可以容纳。</p>
+        <p><strong>js里主要有7种数据类型，分别是数字类型，字符串类型，布尔类型，symbol类型，null，undefined以及对象。</strong></p>
+<h3 id="1-数字类型"><a href="#1-数字类型" class="headerlink" title="1. 数字类型"></a>1. 数字类型</h3><p>数字类型也叫‘number’类型，js里面的数字可以为整数，也可以为小数，可以用科学计数法表示数，但不管是整数还是小数，都以64位的浮点数进行存储。js里面小数的算数运算是不精确的，比如‘0.1+0.2=0.30000000000000004’，这点很重要，切记。</p>
+<h3 id="2-字符串类型"><a href="#2-字符串类型" class="headerlink" title="2. 字符串类型"></a>2. 字符串类型</h3><p>字符串类型也叫‘string’类型，可以用双引号或者单引号括起来。但是如果字符串中有特殊字符，如果单引号之间还要插入单引号或者双引号之间插入双引号，必须用’\’进行转义。字符串连接用’+’,数字与字符串相加结果为字符串。字符串转换为数字类型用parseInt()或parseFloat()。</p>
+<h3 id="3-布尔类型"><a href="#3-布尔类型" class="headerlink" title="3. 布尔类型"></a>3. 布尔类型</h3><p>布尔类型只有两个值，分别为true和false。在条件语句如’if’中的条件表达式，最后得到的值必须为布尔类型，所以其他类型的数据在条件表达式中会隐式地转换为布尔类型。例如’’,0,undefined,null等会转换为false。</p>
+<h3 id="4-symbol类型"><a href="#4-symbol类型" class="headerlink" title="4. symbol类型"></a>4. symbol类型</h3><p>symbol是ES6引入的一个新的数据类型。Symbol()可以创建一个独一无二的值，但它不是字符串。typeof Symbol()的结果是Symbol。可以在创建Symbol的时候给每个Symbol起一个名字，比如Symbol(‘XXX’),但是Symbol的值和名字并没有一一对应的关系，也就是说Symbol(‘a’) != Symbol(‘a’)为true。总之，Symbol会生成一个全局唯一的值。</p>
+<h3 id="5-undefined"><a href="#5-undefined" class="headerlink" title="5. undefined"></a>5. undefined</h3><p>当变量声明之后未被赋值，变量的初始值默认是undefined。如果要给非对象的变量赋值，推荐使用undefined，只要用var xxx声明下就好了。</p>
+<h3 id="6-null"><a href="#6-null" class="headerlink" title="6. null"></a>6. null</h3><p>typeof null的结果是object，这个很特殊，切记。null通常用于对象变量的初始化赋值。</p>
+<h3 id="7-对象"><a href="#7-对象" class="headerlink" title="7. 对象"></a>7. 对象</h3><p>js中除了以上6中数据类型，其他都是对象。函数也是对象，但是typeof fn结果为function。js中没有Array以及json类型，它们都是对象。对象的实质是哈希表，有一个个键值对组成的集合，没有顺序可言。获取对象所有键的API是Object.keys(),遍历对象的语句是for…in循环。</p>
 
       
     </div>
@@ -338,7 +340,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -351,8 +353,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/13/idx9/" rel="next" title="关于文档流以及内联元素与块元素的高度问题">
-                <i class="fa fa-chevron-left"></i> 关于文档流以及内联元素与块元素的高度问题
+              <a href="/2018/05/18/idx14/" rel="next" title="用Canvas实现图片裁剪和保存">
+                <i class="fa fa-chevron-left"></i> 用Canvas实现图片裁剪和保存
               </a>
             
           </div>
@@ -360,10 +362,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/14/idx11/" rel="prev" title="CSS布局技巧总结">
-                CSS布局技巧总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -490,7 +488,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CSS布局"><span class="nav-number">1.</span> <span class="nav-text">1. CSS布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-CSS块元素水平排列的方法"><span class="nav-number">2.</span> <span class="nav-text">2. CSS块元素水平排列的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-CSS定位"><span class="nav-number">3.</span> <span class="nav-text">3. CSS定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-如何用CSS画三角形"><span class="nav-number">4.</span> <span class="nav-text">4. 如何用CSS画三角形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-为什么border-radius设置50-和100-没有区别？"><span class="nav-number">5.</span> <span class="nav-text">5. 为什么border-radius设置50%和100%没有区别？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数字类型"><span class="nav-number">1.</span> <span class="nav-text">1. 数字类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-字符串类型"><span class="nav-number">2.</span> <span class="nav-text">2. 字符串类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-布尔类型"><span class="nav-number">3.</span> <span class="nav-text">3. 布尔类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-symbol类型"><span class="nav-number">4.</span> <span class="nav-text">4. symbol类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-undefined"><span class="nav-number">5.</span> <span class="nav-text">5. undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-null"><span class="nav-number">6.</span> <span class="nav-text">6. null</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-对象"><span class="nav-number">7.</span> <span class="nav-text">7. 对象</span></a></li></ol></div>
             
 
           </div>
