@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 如何将其他数据类型转换为字符串？ toString()是除了null和undefined之外其他数据类型都有的一个API，能将数据内容转换为字符串，它不能转换null和undefined，会报错。数字使用toString转字符串需要用括号括起来,否则会报错： 1(1).toString() //结果为&amp;apos;1&amp;apos;  String()是一个包装类方法，能够将所有类型的数据转换为字">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS数据类型转换以及内存中的数据存储方式">
+<meta property="og:url" content="http://yoursite.com/2018/05/20/idx16/index.html">
+<meta property="og:site_name" content="Cubic Blog">
+<meta property="og:description" content="1. 如何将其他数据类型转换为字符串？ toString()是除了null和undefined之外其他数据类型都有的一个API，能将数据内容转换为字符串，它不能转换null和undefined，会报错。数字使用toString转字符串需要用括号括起来,否则会报错： 1(1).toString() //结果为&amp;apos;1&amp;apos;  String()是一个包装类方法，能够将所有类型的数据转换为字">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-20T13:30:26.361Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS数据类型转换以及内存中的数据存储方式">
+<meta name="twitter:description" content="1. 如何将其他数据类型转换为字符串？ toString()是除了null和undefined之外其他数据类型都有的一个API，能将数据内容转换为字符串，它不能转换null和undefined，会报错。数字使用toString转字符串需要用括号括起来,否则会报错： 1(1).toString() //结果为&amp;apos;1&amp;apos;  String()是一个包装类方法，能够将所有类型的数据转换为字">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/20/idx16/"/>
+
+
+
+
+
+  <title>JS数据类型转换以及内存中的数据存储方式 | Cubic Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cubic Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">个人博客，专注前端</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/idx16/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS数据类型转换以及内存中的数据存储方式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T19:48:54+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-如何将其他数据类型转换为字符串？"><a href="#1-如何将其他数据类型转换为字符串？" class="headerlink" title="1. 如何将其他数据类型转换为字符串？"></a>1. 如何将其他数据类型转换为字符串？</h3><ul>
+<li><p>toString()是除了null和undefined之外其他数据类型都有的一个API，能将数据内容转换为字符串，它不能转换null和undefined，会报错。数字使用toString转字符串需要用括号括起来,否则会报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(1).toString() //结果为&apos;1&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String()是一个包装类方法，能够将所有类型的数据转换为字符串，因此比toString()方法更强大。使用方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String(1) //结果为&apos;1&apos;</span><br><span class="line">String(null) //结果为&apos;null&apos;</span><br><span class="line">String(undefined) //结果为&apos;undefined&apos;</span><br><span class="line">/*转对象的时候很特殊*/</span><br><span class="line">String(&#123;&#125;) //结果为&apos;[object Object]&apos;</span><br><span class="line">String([1,2]) //结果为&apos;1,2&apos;</span><br><span class="line">String([]) //结果是&apos;&apos;</span><br><span class="line">String(&#123;a:1,b:2&#125;) //结果为&apos;[object Object]&apos;</span><br><span class="line">String(function()&#123;&#125;) //结果为&apos;function()&#123;&#125;&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>还有一种更为简单有效的方法是所有要转换的数据加上一个空字符串，结果就是该数据转换为字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1+&apos;&apos; //结果是&apos;1&apos;</span><br><span class="line">null +&apos;&apos; //结果是&apos;null&apos;</span><br><span class="line">undefined+&apos;&apos; //结果是&apos;undefined&apos;</span><br><span class="line">/*转对象的时候千万要注意，它超级特殊*/</span><br><span class="line">&#123;&#125;+&apos;&apos; //结果是&apos;0&apos;</span><br><span class="line">[1,2]+&apos;&apos; //结果是&apos;1,2&apos;</span><br><span class="line">[]+&apos;&apos;//结果是&apos;&apos;</span><br><span class="line">&#123;a:1,b:2&#125; //报错</span><br><span class="line">&apos;&apos;+&#123;a:1,b:2&#125; //结果为&apos;[object Object]&apos;</span><br><span class="line">function()&#123;&#125;+&apos;&apos; //报错</span><br><span class="line">&apos;&apos;+function()&#123;&#125; //结果为&apos;function()&#123;&#125;&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>综合以上情况，其他数据类型转字符串时，除了对象类型之外需要特别注意，另外数据类型的套路都是差不多滴,并且采用空字符串相加的方式转字符串时最好将空字符串写前面。</p>
+<h3 id="2-如何将其他数据类型转换为数字？"><a href="#2-如何将其他数据类型转换为数字？" class="headerlink" title="2. 如何将其他数据类型转换为数字？"></a>2. 如何将其他数据类型转换为数字？</h3></li>
+<li><p>使用Number()包装类方法，转换的结果要么是数字，要么是NaN。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Number(&apos;123&apos;) //结果是123</span><br><span class="line">Number(&apos;12s&apos;) //结果是NaN</span><br><span class="line">Number(&apos;&apos;) //结果是0</span><br><span class="line">Number(true) //结果是1</span><br><span class="line">Number(false) //结果是0</span><br><span class="line">Number(null) //结果是0</span><br><span class="line">Number(undefined) // 结果是NaN</span><br><span class="line">Number([]) //结果是0</span><br><span class="line">Number([1]) //结果是1</span><br><span class="line">Number([1,3]) //结果是NaN</span><br><span class="line">Number(&#123;&#125;) //结果是NaN</span><br><span class="line">Number(&#123;a:1,b:2&#125;) //结果是NaN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>parseInt和parseFloat API<br>前者转换的结果是整数，后者转换的结果是整数或者浮点数，并且parseInt接收第二个参数，也就是以什么进制转换为十进制数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;12&apos;) //结果是12</span><br><span class="line">parseInt(&apos;12.5&apos;) //结果是12，不是四舍五入，而是直接舍去小数点后的数字</span><br><span class="line">parseInt(&apos;12s&apos;) //结果是12,这就是比Number强大的地方</span><br><span class="line">parseInt(&apos;11&apos;,8) //将八进制转十进制，结果是9</span><br><span class="line">parseFloat(&apos;1&apos;) //结果为1</span><br><span class="line">parseFloat(&apos;1.2&apos;) //结果为1.2</span><br><span class="line">parseFloat(&apos;12.1s&apos;) //结果是12.1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过’+’操作符转换，’-‘也可以，但取的是相反数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+&apos;123&apos; //结果是123</span><br><span class="line">+&apos;-123&apos; //结果是-123</span><br><span class="line">+&apos;123s&apos; //结果是NaN</span><br><span class="line">-&apos;123&apos; //结果是-123</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-如何将其他数据类型转换为布尔类型"><a href="#3-如何将其他数据类型转换为布尔类型" class="headerlink" title="3. 如何将其他数据类型转换为布尔类型"></a>3. 如何将其他数据类型转换为布尔类型</h3><ul>
+<li>通过Boolean()包装类方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Boolean(1) //结果是true</span><br><span class="line">Boolean(0) //结果是false</span><br><span class="line">Boolean(NaN) //结果是false</span><br><span class="line">Boolean(&apos;sd&apos;) //结果是true</span><br><span class="line">Boolean(&apos;&apos;) //结果是false</span><br><span class="line">Boolean(null) //结果是false</span><br><span class="line">Boolean(undefined) //结果是false</span><br><span class="line">Boolean(&#123;&#125;) //结果是true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>根据以上结果总结出5个falsy(转成bool类型为false,但本身并不是bool类型)值：0，NaN，’’，null，undefined。</p>
+<ul>
+<li>通过’!!’转换成布尔类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">!! 1 //结果是true</span><br><span class="line">!! 0 //结果是false</span><br><span class="line">!! &apos;sd&apos; //结果是true</span><br><span class="line">.</span><br><span class="line">.知道用法就可以啦，结果和上面那种方法是一样的</span><br><span class="line">.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4-变量和数据时如何在内存中存储的？"><a href="#4-变量和数据时如何在内存中存储的？" class="headerlink" title="4. 变量和数据时如何在内存中存储的？"></a>4. 变量和数据时如何在内存中存储的？</h3><p>内存可以划分为两个区块，代码区和数据区，而数据区有可以分为栈内存和堆内存两部分。代码区存放的是代码，我们的变量名就存放在代码区，而变量值则存放在数据区。变量值可以分为简单类型和复杂类型，简单类型（数字、字符串、布尔值、null、undefined、Sybmbol）都存放在栈内存中，按照一定的顺序依次存放。复杂类型也就是对象类型分两部分存放，栈内存中存放的是其堆内存地址，堆内存中存放的就是对象的内容，堆内存中是乱序存放的。复杂类型变量名对应的值是栈内存中存放的地址，根据这个地址就可以在对内存中找到具体的值，所以复杂类型的变量赋值也叫做对象的引用，跟C语言中的指针相似，但js中并不存在指针的概念，所以用对象的引用这个概念来替代。变量赋值实质上就是改变存储在栈内存中的值，并不影响堆内存中的内容。</p>
+<h3 id="5-浏览器的垃圾回收机制"><a href="#5-浏览器的垃圾回收机制" class="headerlink" title="5. 浏览器的垃圾回收机制"></a>5. 浏览器的垃圾回收机制</h3><p>当没有任何变量对堆内存中的对象进行引用的时候，这些对象就会成为垃圾，应该被回收并且释放内存。浏览器就会不定时地检测这些没有’主人’的对象并将其销毁，这就是浏览器的垃圾回收机制（GC）。现代主流浏览器在页面关闭的时候都会自觉的进行gc释放内存，但是IE6以下却并没有这个自觉，所以IE6以下浏览器存在内存泄漏的BUG，解决方法是在window.onunload事件中主动将所有使用的事件处理函数声明为null。</p>
+<h3 id="6-深拷贝和浅拷贝"><a href="#6-深拷贝和浅拷贝" class="headerlink" title="6. 深拷贝和浅拷贝"></a>6. 深拷贝和浅拷贝</h3><p>深拷贝指的是从一个变量复制出另一个变量，其中一个变量的改变并不会影响另一个变量，这就是深拷贝。顾名思义浅拷贝就是复制的变量以及原始变量其中一个发生变化，那么两个变量值都会变。简单变量的赋值就是深拷贝。复杂变量需要用递归遍历的手段实现深拷贝。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//写一个对象深拷贝方法</span><br><span class="line">function deepCopy(obj)&#123;</span><br><span class="line">    var newObj=&#123;&#125;;</span><br><span class="line">    for(var key in obj)&#123;</span><br><span class="line">        if(typeof obj[key] != &apos;object&apos;)&#123;</span><br><span class="line">            newObj[key]=obj[key];</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            newObj[key]=deepCopy(obj[key]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return newObj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/19/idx15/" rel="next" title="JS里的数据类型">
+                <i class="fa fa-chevron-left"></i> JS里的数据类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="Qian YJ" />
+            
+              <p class="site-author-name" itemprop="name">Qian YJ</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-如何将其他数据类型转换为字符串？"><span class="nav-number">1.</span> <span class="nav-text">1. 如何将其他数据类型转换为字符串？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-如何将其他数据类型转换为数字？"><span class="nav-number">2.</span> <span class="nav-text">2. 如何将其他数据类型转换为数字？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何将其他数据类型转换为布尔类型"><span class="nav-number">3.</span> <span class="nav-text">3. 如何将其他数据类型转换为布尔类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-变量和数据时如何在内存中存储的？"><span class="nav-number">4.</span> <span class="nav-text">4. 变量和数据时如何在内存中存储的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-浏览器的垃圾回收机制"><span class="nav-number">5.</span> <span class="nav-text">5. 浏览器的垃圾回收机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-深拷贝和浅拷贝"><span class="nav-number">6.</span> <span class="nav-text">6. 深拷贝和浅拷贝</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qian YJ</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
