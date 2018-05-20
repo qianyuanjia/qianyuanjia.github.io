@@ -431,13 +431,13 @@
       
         
           
-            <h2 id="HTTP-请求包括哪些部分，如何用Chrome开发者工具查看-HTTP-请求内容"><a href="#HTTP-请求包括哪些部分，如何用Chrome开发者工具查看-HTTP-请求内容" class="headerlink" title="HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容"></a>HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容</h2><ol>
+            <h3 id="HTTP-请求包括哪些部分，如何用Chrome开发者工具查看-HTTP-请求内容"><a href="#HTTP-请求包括哪些部分，如何用Chrome开发者工具查看-HTTP-请求内容" class="headerlink" title="HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容"></a>HTTP 请求包括哪些部分，如何用Chrome开发者工具查看 HTTP 请求内容</h3><ol>
 <li>http请求格式：<ul>
 <li>第一部分<br>如：GET / HTTP/1.1<br>第一个部分包含动作（GET或POST）,请求路径，必须以’/‘开头，包含参数但不包含锚点，以及最后的协议及版本</li>
 <li>第二部分<br>是发送给服务器的各种信息，以’键: 值’的格式发送，如Host: <a href="http://www.baidu.com等，可以有多个这样的键值对。" target="_blank" rel="noopener">www.baidu.com等，可以有多个这样的键值对。</a><br>特别说明：Content-Type: Application/x-www-form-urlencoded<br>Application是应用数据的意思，x-表示尚不列入标准规范的规范的格式，www是万维网的意思，form是表单的意思，而urlencoded表示中文用特殊方式编码。</li>
 <li>第三部分<br>回车空行，用于分隔第四部分的请求数据</li>
 <li>第四部分<br>是请求时发送的数据，一般只有以’POST’方式请求是才发送数据。</li>
-<li>Chrome开发者工具查看 HTTP 请求内容<br>打开开发者工具，点击Network选项卡，再刷新页面时会将所有的请求显示出来。点击要查看的某个请求，点击其中的Request Header，再点view source可以以原始请求格式显示。<h2 id="HTTP-响应包括哪些部分，如何用Chrome开发者工具查看-HTTP-响应内容"><a href="#HTTP-响应包括哪些部分，如何用Chrome开发者工具查看-HTTP-响应内容" class="headerlink" title="HTTP 响应包括哪些部分，如何用Chrome开发者工具查看 HTTP 响应内容"></a>HTTP 响应包括哪些部分，如何用Chrome开发者工具查看 HTTP 响应内容</h2></li>
+<li>Chrome开发者工具查看 HTTP 请求内容<br>打开开发者工具，点击Network选项卡，再刷新页面时会将所有的请求显示出来。点击要查看的某个请求，点击其中的Request Header，再点view source可以以原始请求格式显示。<h3 id="HTTP-响应包括哪些部分，如何用Chrome开发者工具查看-HTTP-响应内容"><a href="#HTTP-响应包括哪些部分，如何用Chrome开发者工具查看-HTTP-响应内容" class="headerlink" title="HTTP 响应包括哪些部分，如何用Chrome开发者工具查看 HTTP 响应内容"></a>HTTP 响应包括哪些部分，如何用Chrome开发者工具查看 HTTP 响应内容</h3></li>
 </ul>
 </li>
 <li>http响应格式：<ul>
@@ -574,7 +574,7 @@
       
         
           
-            <h2 id="关于git使用的最常用的三个命令"><a href="#关于git使用的最常用的三个命令" class="headerlink" title="关于git使用的最常用的三个命令"></a>关于git使用的最常用的三个命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init 用于初始化仓库，建立本地版本库，使用前需进入仓库目录</span><br><span class="line">git add 用户添加改动的文件到暂存区</span><br><span class="line">git commit -v 用户提交改动的文件到本地版本库，-v参数用于显示所有的diff信息，也就是改动的地方。</span><br></pre></td></tr></table></figure>
+            <h2 id="关于git使用的最常用的三个命令"><a href="#关于git使用的最常用的三个命令" class="headerlink" title="关于git使用的最常用的三个命令"></a>关于git使用的最常用的三个命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init //用于初始化仓库，建立本地版本库，</span><br><span class="line">         //使用前需进入仓库目录</span><br><span class="line">git add  //用户添加改动的文件到暂存区</span><br><span class="line">git commit -v //用户提交改动的文件到本地版本库</span><br><span class="line">              //-v参数用于显示所有的diff信息，也就是改动的地方。</span><br></pre></td></tr></table></figure>
 <h2 id="新建test目录用于测试这三个命令"><a href="#新建test目录用于测试这三个命令" class="headerlink" title="新建test目录用于测试这三个命令"></a>新建test目录用于测试这三个命令</h2><ul>
 <li>git init命令<br><img src="/2018/05/11/idx4/gitinit.png" alt=""></li>
 <li>git add命令<br><img src="/2018/05/11/idx4/gitadd.png" alt=""></li>
