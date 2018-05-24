@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="jQuery," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="JS中的原型以及原型链概念只存在于对象类型数据。当一个对象被创建时，JS解析器做了两件事，创建一个哈希表用于描述对象的属性和方法，自动创建一个’__proto__‘属性用于绑定对象的某些共有属性，也就是所谓的原型。因此，原型就是同一类对象的共有属性，创建原型的目的就是节省内存开销，因为对同一类所有对象开辟内存用于存放相同的属性和方法是很奢侈的。原型是把同一类对象相同的属性和方法抽取出来独立成一个对">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="首先我们来写一个给节点对象添加样式类的函数12345function addClass(node,classArr)&amp;#123;   for(let i=0;i&amp;lt;classArr.length;i++)&amp;#123;    node.classList.add(classArr)   &amp;#125; &amp;#125; 以上封装函数的函数虽然简单，但是存在一个问题，当我们封装很多这样的工具函数的时候，">
+<meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS原型与原型链">
-<meta property="og:url" content="http://yoursite.com/2018/05/21/idx17/index.html">
+<meta property="og:title" content="jQuery及其API的实现">
+<meta property="og:url" content="http://yoursite.com/2018/05/24/idx20/index.html">
 <meta property="og:site_name" content="Cubic Blog">
-<meta property="og:description" content="JS中的原型以及原型链概念只存在于对象类型数据。当一个对象被创建时，JS解析器做了两件事，创建一个哈希表用于描述对象的属性和方法，自动创建一个’__proto__‘属性用于绑定对象的某些共有属性，也就是所谓的原型。因此，原型就是同一类对象的共有属性，创建原型的目的就是节省内存开销，因为对同一类所有对象开辟内存用于存放相同的属性和方法是很奢侈的。原型是把同一类对象相同的属性和方法抽取出来独立成一个对">
+<meta property="og:description" content="首先我们来写一个给节点对象添加样式类的函数12345function addClass(node,classArr)&amp;#123;   for(let i=0;i&amp;lt;classArr.length;i++)&amp;#123;    node.classList.add(classArr)   &amp;#125; &amp;#125; 以上封装函数的函数虽然简单，但是存在一个问题，当我们封装很多这样的工具函数的时候，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/05/21/idx17/pro.png">
-<meta property="og:updated_time" content="2018-05-21T04:42:32.626Z">
+<meta property="og:updated_time" content="2018-05-24T13:01:52.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS原型与原型链">
-<meta name="twitter:description" content="JS中的原型以及原型链概念只存在于对象类型数据。当一个对象被创建时，JS解析器做了两件事，创建一个哈希表用于描述对象的属性和方法，自动创建一个’__proto__‘属性用于绑定对象的某些共有属性，也就是所谓的原型。因此，原型就是同一类对象的共有属性，创建原型的目的就是节省内存开销，因为对同一类所有对象开辟内存用于存放相同的属性和方法是很奢侈的。原型是把同一类对象相同的属性和方法抽取出来独立成一个对">
-<meta name="twitter:image" content="http://yoursite.com/2018/05/21/idx17/pro.png">
+<meta name="twitter:title" content="jQuery及其API的实现">
+<meta name="twitter:description" content="首先我们来写一个给节点对象添加样式类的函数12345function addClass(node,classArr)&amp;#123;   for(let i=0;i&amp;lt;classArr.length;i++)&amp;#123;    node.classList.add(classArr)   &amp;#125; &amp;#125; 以上封装函数的函数虽然简单，但是存在一个问题，当我们封装很多这样的工具函数的时候，">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/21/idx17/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/24/idx20/"/>
 
 
 
 
 
-  <title>JS原型与原型链 | Cubic Blog</title>
+  <title>jQuery及其API的实现 | Cubic Blog</title>
   
 
 
@@ -245,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/idx17/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/idx20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian YJ">
@@ -262,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS原型与原型链</h1>
+          <h1 class="post-title" itemprop="name headline">jQuery及其API的实现</h1>
         
 
         <div class="post-meta">
@@ -274,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T10:40:24+08:00">
-                2018-05-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T20:16:16+08:00">
+                2018-05-24
               </time>
             
 
@@ -317,9 +315,11 @@
       
 
       
-        <p>JS中的原型以及原型链概念只存在于对象类型数据。当一个对象被创建时，JS解析器做了两件事，创建一个哈希表用于描述对象的属性和方法，自动创建一个’__proto__‘属性用于绑定对象的某些共有属性，也就是所谓的原型。因此，原型就是同一类对象的共有属性，创建原型的目的就是节省内存开销，因为对同一类所有对象开辟内存用于存放相同的属性和方法是很奢侈的。原型是把同一类对象相同的属性和方法抽取出来独立成一个对象，当新创建一个对象时，这个对象的’__proto__‘属性就会自动引用原型对象。原型是一个对象，必须有’人’（比喻一下，实际上是变量或对象属性的意思）来引用它，否则会被gc掉。ES内置了Number、String、Boolean、Object、Function等构造函数，通过这些构造函数可以创建相应的数据对象。因为原型先于对象存在，所以在对象创建前就已经有’人’引用了它，那么这个’人’是谁呢？它就是构造函数的prototype属性，构造函数的实质也是对象，因此它也可以存在属性，所以我们通过构造函数创建一个对象之后，就用如下的对应关系：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数();</span><br><span class="line">对象.__proto__ === 函数.prototype //结果为true</span><br><span class="line"></span><br><span class="line">/*既然函数也是对象，因此满足可以得到如下关系*/</span><br><span class="line">var 函数 = new Function();</span><br><span class="line">函数.__proto__ === Function.prototype</span><br></pre></td></tr></table></figure></p>
-<p>JS中的Object构造函数比较特殊，它是所有对象的祖先，所有对象都拥有Object原型中的属性和方法，比如toString()方法以及hasOwnProperty属性等。以String对象举例说明一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = new String();</span><br><span class="line">a.__proto__ === String.prototype //结果为true</span><br><span class="line">a.__proto__.__proto__ === Object.prototype //结果为true</span><br><span class="line">/*由于Object的原型已经是最顶级的了，它没有再引用其他的原型对象，所以*/</span><br><span class="line">a.__proto__.__proto__.__proto__ === Object.prototype.__proto__ ==== null</span><br></pre></td></tr></table></figure></p>
-<p>原型链实际上就是对象通过__proto__属性依次引用（指向）各个原型形成的一个链表结构，对象查找它的属性就是沿着原型链查找的，如果找到了就马上停止，不再沿着原型链找下去了，这就是所谓的’就近原则’。给张图示意一下原型和原型链的结构，红色的线代表一条原型链：<br><img src="/2018/05/21/idx17/pro.png" alt=""></p>
+        <p>首先我们来写一个给节点对象添加样式类的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function addClass(node,classArr)&#123;</span><br><span class="line">   for(let i=0;i&lt;classArr.length;i++)&#123;</span><br><span class="line">    node.classList.add(classArr)</span><br><span class="line">   &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上封装函数的函数虽然简单，但是存在一个问题，当我们封装很多这样的工具函数的时候，相当于在全局作用域下声明了很多变量，但是别人不知道我们声明了哪些变量，很容易引发变量名冲突覆盖的问题，于是我们引入了命名空间的方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//命名空间封装函数</span><br><span class="line">var dom=&#123;&#125;</span><br><span class="line">dom.addClass=function(node,classArr)&#123;</span><br><span class="line">   for(let i=0;i&lt;classArr.length;i++)&#123;</span><br><span class="line">    node.classList.add(classArr)</span><br><span class="line">   &#125; </span><br><span class="line">&#125;</span><br><span class="line">dom.getSiblings=function()&#123;...&#125;</span><br></pre></td></tr></table></figure></p>
+<p>采用命名空间的方式相当于在全局作用域下只暴露了一个全局变量，大大减小了变量冲突的可能性，但是使用函数的时候需要写一长串的函数名，比如dom.addClass(node,[‘a’,’b’,’c’]),我们习惯使用node.addClass([‘a’,’b’,’c’]),因此可以换一种方式封装函数，我们将封装的函数放在Node的原型下，由于所有的DOM对象都继承这个Node原型，所以所有的DOM都可以用我们习惯的方式使用这个函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//封装函数放在Node原型中</span><br><span class="line">Node.prototype.addClass=function(node,classArr)&#123;</span><br><span class="line">   for(let i=0;i&lt;classArr.length;i++)&#123;</span><br><span class="line">    node.classList.add(classArr)</span><br><span class="line">   &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但是JS有许多函数库，如果每个函数库都在Node原型中封装函数，迟早会打架，于是每个函数库就在window全局对象下另起一个门户，比如jQuery就在window对象中声明了一个jQuery构造函数，作为使用jQuery众多API的入口。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function(nodeOrSelector)&#123;</span><br><span class="line">    let nodes=&#123;&#125;</span><br><span class="line">    //判断传入的是选择器还是node对象</span><br><span class="line">    if(typeof nodeOrSelector === &apos;string&apos;)&#123;</span><br><span class="line">        nodes=document.querySelectorAll(nodeOrSelector)</span><br><span class="line">    &#125;else if(nodeOrSelector instanceof Node)&#123;</span><br><span class="line">        //即使是node对象，也要将其封装为一个伪数组，以免返回值不同引发混淆</span><br><span class="line">        nodes=&#123;</span><br><span class="line">            0:nodeOrSelector,</span><br><span class="line">            length:1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.addClass=function(className)&#123;</span><br><span class="line">        for(let i=0;i&lt;nodes.length;i++)&#123;</span><br><span class="line">            nodes[i].classList.add(className)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.setText=function()&#123;</span><br><span class="line">          for(let i=0;i&lt;nodes.length;i++)&#123;</span><br><span class="line">            nodes[i].textContent=&apos;hi&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return nodes</span><br><span class="line">&#125;</span><br><span class="line">window.$ = jQuery //给jQuery起一个别名</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;hi&apos;) // 可将所有 div 的 textContent 变为 hi</span><br></pre></td></tr></table></figure></p>
+<p>jQuery()可以传入一个node对象或者各种选择器，返回一个包含node对象的伪数组，它是一个对象，它的属性中含有jQuery的各种API。与真正的jQuery不同的是，真正的jQuery将各种工具函数声明在jQuery原型中，不用为每个jQuery对象都保存一份相同的API。</p>
 
       
     </div>
@@ -337,7 +337,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
           
         </div>
       
@@ -350,8 +350,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/20/idx16/" rel="next" title="JS数据类型转换以及内存中的数据存储方式">
-                <i class="fa fa-chevron-left"></i> JS数据类型转换以及内存中的数据存储方式
+              <a href="/2018/05/23/idx19/" rel="next" title="JS函数知识点">
+                <i class="fa fa-chevron-left"></i> JS函数知识点
               </a>
             
           </div>
@@ -359,10 +359,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/22/idx18/" rel="prev" title="原生JS操作DOM常用API">
-                原生JS操作DOM常用API <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
