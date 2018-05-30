@@ -239,6 +239,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/idx24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/29/idx24/" itemprop="url">前端插件的使用方法以及基于MVC思想重构代码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T17:50:34+08:00">
+                2018-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="CRM三步走"><a href="#CRM三步走" class="headerlink" title="CRM三步走"></a>CRM三步走</h3><p>不要给老夫说什么源代码、设计模式、API，老夫看到插件就是复制粘贴加报错。报错不可怕，可怕的是看源代码，嗯，所以快速学会一个插件的最好办法就是赶紧用，报错了再细看报错的地方，当你把一个个坑踩遍了之后，就自然而然学会了这个插件，所以学习前端插件可以分为C(Copy)R(Run)M(Modify)三步走，根据快速入门手册，复制上面的代码，直接使用即可。当你运行成功之后，可以修改某些地方，这样你就已经相当于在改进插件啦，可以吹牛B啦！</p>
+<h3 id="MVC设计思想"><a href="#MVC设计思想" class="headerlink" title="MVC设计思想"></a>MVC设计思想</h3><p>MVC不是框架，它只是一种设计思想，一种代码的组织方式，使我们的代码结构更统一，逻辑更清晰，组织和调试更简单。<br>M是模型，也就是数据，数据一般放在数据库里，所以模型负责与数据库交互对数据进行增删改查的操作。<br>V是视图，也就是对应于DOM结构中的一部分，是我们看的见的东西。<br>C是控制器，控制器从模型中取数据然后放进视图里进行渲染更新。控制器包含了一系列的行为逻辑，它是模型和视图之间的桥梁。<br>模型和视图之间是没有交集的，视图需要数据时，控制器会产生一个行为从模型中请求数据，模型再与数据库交互拿到相应的数据，之后模型把数据交给控制器，控制器将数据传递给视图，视图对数据进行渲染。<br>Model 和服务器交互，Model 将得到的数据交给 Controller，Controller 把数据填入 View，并监听 View用户操作 View，如点击按钮，Controller 就会接受到点击事件，Controller 这时会去调用 Model，Model 会与服务器交互，得到数据后返回给 Controller，Controller 得到数据就去更新 View</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/idx23/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1460,130 +1581,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/idx14/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian YJ">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cubic Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/18/idx14/" itemprop="url">用Canvas实现图片裁剪和保存</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T13:31:43+08:00">
-                2018-05-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="先来简单看下效果"><a href="#先来简单看下效果" class="headerlink" title="先来简单看下效果"></a>先来简单看下效果</h3><p><img src="/2018/05/18/idx14/clip.gif" alt=""></p>
-<h3 id="1-html结构内容"><a href="#1-html结构内容" class="headerlink" title="1. html结构内容"></a>1. html结构内容</h3><p>html内容十分简单，我们需要一个input:file按钮用于上传本地图片，一个连接按钮用于图片保存，一个div用作选择遮罩，一个img用于预览裁剪结果，由于内容比较简单，所以这部分放一下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    #mark&#123;</span><br><span class="line">        background-color: rgba(255,255,255,0.5);</span><br><span class="line">        position: absolute;</span><br><span class="line">        display: none;</span><br><span class="line">        cursor: move;</span><br><span class="line">    &#125;</span><br><span class="line">    #show&#123;</span><br><span class="line">        display: none;</span><br><span class="line">        margin-left: 20px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;&quot; id=&quot;pic&quot;&gt;</span><br><span class="line">    &lt;a href=&quot;&quot; id=&quot;save&quot;&gt;下载裁剪图&lt;/a&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;div id=&quot;mark&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;img src=&quot;&quot; alt=&quot;&quot; id=&quot;show&quot;&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-如何让选中的图片显示在页面上？"><a href="#2-如何让选中的图片显示在页面上？" class="headerlink" title="2. 如何让选中的图片显示在页面上？"></a>2. 如何让选中的图片显示在页面上？</h3><p>首先上传的图片存储于input:file对象的files属性中，并以数组的方式存储。接下来我们要将图片读取成文件对象，这部分需要用到FileReader API,通过FileReader对象的readAsDataURL方法可以读取input:file里的文件列表里面的图片，并将图片转换为base64格式。当FileReader对象将图片加载完之后，触发它的onload的事件，可以打印下事件对象函数的具体内容，发现其ev.target.result就是图片转成base64的一长串URI，通过创建一个Image对象并且将这串URI作为Image对象的src，这时，我们已经将上传的图片保存在内存中了，最后可以通过Canvas的上下文内容对象的drawImage方法，将Image对象画在画布中，图片就展示到页面上啦！</p>
-<h3 id="3-如何下载和保存图片？"><a href="#3-如何下载和保存图片？" class="headerlink" title="3. 如何下载和保存图片？"></a>3. 如何下载和保存图片？</h3><p>通过下面这个方法就搞定啦，这个方法需要两个参数，一个是图片的base64格式内容，另一个是图片名称（自定义）。这个方法看不懂没关系，把它当成一个通用的API就好啦。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function saveFile(data,filename)&#123;</span><br><span class="line">       var save_link=document.createElementNS(&apos;http://www.w3.org/1999/xhtml&apos;, &apos;a&apos;);</span><br><span class="line">       save_link.href=data;</span><br><span class="line">       save_link.download=filename;</span><br><span class="line">       var event=document.createEvent(&apos;MouseEvents&apos;);</span><br><span class="line">       event.initMouseEvent(&apos;click&apos;,true,false,window,0,0,0,0,0,false,false,false,false,0,null);</span><br><span class="line">       save_link.dispatchEvent(event);</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure></p>
-<h3 id="4-我已将js代码上传到github中，有兴趣的可以访问"><a href="#4-我已将js代码上传到github中，有兴趣的可以访问" class="headerlink" title="4. 我已将js代码上传到github中，有兴趣的可以访问"></a>4. 我已将js代码上传到github中，有兴趣的可以访问</h3><p><a href="https://github.com/qianyuanjia/jsexcise/blob/master/js/haizei.js" target="_blank" rel="noopener">详细js代码</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1638,7 +1635,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
