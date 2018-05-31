@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前端与后端交互的辛酸史以及JSONP的运用前端程序员在早些的时候一般通过表单的方式将请求或更改的数据发送给后端，但是表单提交后，不管成功与失败，都要跳转到另一个页面，在另一个页面上呈现提交的结果，一般是“sucess”或者“fail”，用户为了看到这么两个单词必须等待一个新的页面打开，并且按历史回退到原来的页面，并且通常看到的还是缓存的旧页面，还要进行刷新才能看到操作之后页面的变化，所以用户体验超">
+<meta name="description" content="什么是面向对象编程面向对象编程是用抽象方式创建基于现实世界模型的一种编程模式。它是相对于 “一个程序只是一些函数的集合，或简单的计算机指令列表”的传统软件设计观念而言的，面向对象编程可以看做是一系列对象相互协作的软件设计。在OOP（Object Oriented Programming）中，每个对象能够接受消息，处理数据和发送消息给其他对象。每个对象都可以被看做是一个拥有清晰角色或责任的独立小机器">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSONP原理及实现">
-<meta property="og:url" content="http://yoursite.com/2018/05/24/idx21/index.html">
+<meta property="og:title" content="JavaScript面向对象编程">
+<meta property="og:url" content="http://yoursite.com/2018/05/31/idx25/index.html">
 <meta property="og:site_name" content="Cubic Blog">
-<meta property="og:description" content="前端与后端交互的辛酸史以及JSONP的运用前端程序员在早些的时候一般通过表单的方式将请求或更改的数据发送给后端，但是表单提交后，不管成功与失败，都要跳转到另一个页面，在另一个页面上呈现提交的结果，一般是“sucess”或者“fail”，用户为了看到这么两个单词必须等待一个新的页面打开，并且按历史回退到原来的页面，并且通常看到的还是缓存的旧页面，还要进行刷新才能看到操作之后页面的变化，所以用户体验超">
+<meta property="og:description" content="什么是面向对象编程面向对象编程是用抽象方式创建基于现实世界模型的一种编程模式。它是相对于 “一个程序只是一些函数的集合，或简单的计算机指令列表”的传统软件设计观念而言的，面向对象编程可以看做是一系列对象相互协作的软件设计。在OOP（Object Oriented Programming）中，每个对象能够接受消息，处理数据和发送消息给其他对象。每个对象都可以被看做是一个拥有清晰角色或责任的独立小机器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-27T13:28:37.613Z">
+<meta property="og:updated_time" content="2018-05-31T05:13:48.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSONP原理及实现">
-<meta name="twitter:description" content="前端与后端交互的辛酸史以及JSONP的运用前端程序员在早些的时候一般通过表单的方式将请求或更改的数据发送给后端，但是表单提交后，不管成功与失败，都要跳转到另一个页面，在另一个页面上呈现提交的结果，一般是“sucess”或者“fail”，用户为了看到这么两个单词必须等待一个新的页面打开，并且按历史回退到原来的页面，并且通常看到的还是缓存的旧页面，还要进行刷新才能看到操作之后页面的变化，所以用户体验超">
+<meta name="twitter:title" content="JavaScript面向对象编程">
+<meta name="twitter:description" content="什么是面向对象编程面向对象编程是用抽象方式创建基于现实世界模型的一种编程模式。它是相对于 “一个程序只是一些函数的集合，或简单的计算机指令列表”的传统软件设计观念而言的，面向对象编程可以看做是一系列对象相互协作的软件设计。在OOP（Object Oriented Programming）中，每个对象能够接受消息，处理数据和发送消息给其他对象。每个对象都可以被看做是一个拥有清晰角色或责任的独立小机器">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/24/idx21/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/31/idx25/"/>
 
 
 
 
 
-  <title>JSONP原理及实现 | Cubic Blog</title>
+  <title>JavaScript面向对象编程 | Cubic Blog</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/idx21/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/31/idx25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian YJ">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JSONP原理及实现</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript面向对象编程</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T22:57:17+08:00">
-                2018-05-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T11:21:11+08:00">
+                2018-05-31
               </time>
             
 
@@ -315,9 +315,10 @@
       
 
       
-        <h3 id="前端与后端交互的辛酸史以及JSONP的运用"><a href="#前端与后端交互的辛酸史以及JSONP的运用" class="headerlink" title="前端与后端交互的辛酸史以及JSONP的运用"></a>前端与后端交互的辛酸史以及JSONP的运用</h3><p>前端程序员在早些的时候一般通过表单的方式将请求或更改的数据发送给后端，但是表单提交后，不管成功与失败，都要跳转到另一个页面，在另一个页面上呈现提交的结果，一般是“sucess”或者“fail”，用户为了看到这么两个单词必须等待一个新的页面打开，并且按历史回退到原来的页面，并且通常看到的还是缓存的旧页面，还要进行刷新才能看到操作之后页面的变化，所以用户体验超级超级差！于是悲催的前端程序员不得不为了提升用户体验绞尽脑汁想办法！<br><strong>改进一：怎样让表单提交之后不跳转页面</strong><br>机智的程序员在页面中嵌入一个iframe，将表单的target指向这个iframe的名字，于是表达提交之后就乖乖的在iframe中跳转了，并且用户能看到“sucess”或者“fail”，不错，于是为了提升客户那么一丢丢的体验，在很长一段时间内前端页面就是通过嵌入iframe的方式阻止表单提交后跳转的。但是用户还是得在表单提交之后重新刷新页面才能看到操作后的结果，程序员还得继续努力啊！<br><strong>改进二：听说img标签可以实现无刷新请求后端数据</strong><br>纳尼！这都可以！令人窒息的操作！是的，通过js代码动态创建一个img标签，然后将img的src指向后端服务器的某个路径，那么img就可以向后端服务器发起GET请求了，请注意，只能是GET请求，并且img标签无需插入到页面中也能发请求。哇塞！不错，但是怎么判断我请求成功还是失败了呢？听说一般加载资源都可以通过onload和onerror事件处理加载成功与失败的情况，这里好像同样适用。<br>这两个事件是如何判断资源请求成功与失败呢，是根据服务器响应传回的状态码进行判断，2XX表示成功，3XX表示重定向，4XX客户端错误，5XX服务器错误，一般返回2XX说明我们请求成功了，4XX就是失败了。但是img标签默认请求的是图片资源，如果我们想拿回文本数据，那么一般会请求失败，所以后端需要将数据类型进行伪装，设置“Content-Type”为“image/jpg”或”image/png”等图片MIME类型就好啦，有一种偷梁换柱，暗度陈仓的赶脚。拿回数据后你想怎么干就怎么干啦。但是哦，img标签必须需要后台配合伪装数据，那浏览器端拿到数据不就傻眼啦？这是图片呢还是图片呢还是图片呢，于是，于是，我们的JSONP就终于登场啦！<br><strong>改进三：闪亮登场的JSONP</strong><br>img有src，而script也有src，那么按道理script也可以请求后端数据，事实的确如此。我们通过js代码动态创建script标签，然后将它的src指向后端服务器上的某个路径，就能向后端服务器发起请求了吗？还不行，记住必须将script插入到页面中，否则不能发起请求。script插入页面中后，就会向后端发起请求，当请求成功并拿回数据后，就会插入script标签中，并且浏览器会将这段数据当做js代码执行，如果给script绑定了onload事件，之后就会执行这个事件中的逻辑。既然拿回数据后会当做js代码执行，那么onload事件就不是必须的了，只要将onload中的逻辑放到从后端拿回的数据中就好啦。但是这样做的话，后端程序员就哭啦，我不知道你前端写了啥，但我必须了解你的东西还要写点东西给你，请让我哭一会。好，这就叫做前端与后端的耦合，不了深入了解对方休想干事，于是前端了解了后端的苦楚之后，决定在src中多传你一个参数，参数值是一个前端定义好的函数名，后端只要将返回的数据当做第一个参数传到这个函数中，并且以字符串的形式返回给我，不需要后端做其他的，这就是解耦合啦。过程是这样的…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//前端</span><br><span class="line">var oScript=document.createElement(&apos;script&apos;);</span><br><span class="line">oScript.src=&quot;//jack.com/pay?callback=fn&quot;;</span><br><span class="line">function fn()&#123;</span><br><span class="line">    ....</span><br><span class="line">    逻辑代码</span><br><span class="line">&#125;</span><br><span class="line">//后端</span><br><span class="line">response.write(`fn.call(undefined,&#123;</span><br><span class="line">        &apos;name&apos;:&apos;jack&apos;,</span><br><span class="line">        &apos;age&apos;:&apos;18&apos;</span><br><span class="line">    &#125;)`);</span><br><span class="line">//后端返回的数据一般是JSON类型的，JSON前后有内容，</span><br><span class="line">所谓的JSON+padding，因此起了一个“JSONP”的莫名其妙</span><br><span class="line">的名字。通常函数名fn是通过后端解析查询参数得到的，</span><br><span class="line">所以后端程序员连传入的函数名都可以一无所知就完成</span><br><span class="line">他的工作，因此他们解放了，前端还得继续苦逼。</span><br></pre></td></tr></table></figure></p>
-<p><strong>JSONP是基于动态创建script标签的，并且只能支持GET请求不支持POST请求</strong>。请求成功并且执行完后通常需要将页面中动态插入的script标签删除。前端传入的函数名一般是随机的，每次传入都会有所不同，可以写成如下方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var fName=&apos;frank&apos;+parseInt(Math.random()*1000000);</span><br><span class="line">window[fName]=function()&#123;</span><br><span class="line">    处理逻辑...</span><br><span class="line">    delete window[fName];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>详细的代码可以访问：<a href="https://github.com/qianyuanjia/jsonp" target="_blank" rel="noopener">代码链接</a><br><strong>jQuery帮我们封装了JSONP</strong><br>jQuery一开始将JSONP封装在了ajax中，有点迷，后来又独立出来了，但是ajax实现方式还能用，不需要自己动态创建script，也不需要创建随机函数，jQuery已经疯转好了，代码演示如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url:&apos;http://jack.com/pay&apos;,</span><br><span class="line">    dataType:&apos;jsonp&apos;,</span><br><span class="line">    success:function()&#123;</span><br><span class="line">        处理逻辑...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+        <h3 id="什么是面向对象编程"><a href="#什么是面向对象编程" class="headerlink" title="什么是面向对象编程"></a>什么是面向对象编程</h3><p>面向对象编程是用抽象方式创建基于现实世界模型的一种编程模式。它是相对于 “一个程序只是一些函数的集合，或简单的计算机指令列表”的传统软件设计观念而言的，面向对象编程可以看做是一系列对象相互协作的软件设计。在OOP（Object Oriented Programming）中，每个对象能够接受消息，处理数据和发送消息给其他对象。每个对象都可以被看做是一个拥有清晰角色或责任的独立小机器。面向对象程序设计的目的是在编程中促进更好的灵活性和可维护性，在大型软件工程中广为流行。凭借其对模块化的重视，面向对象的代码开发更简单，更容易理解，相比非模块化编程方法, 它能更直接地分析, 编码和理解复杂的情况和过程。<br>JavaScript 的核心是支持面向对象的，同时它也提供了强大灵活的 OOP 语言能力，现在就让我们稍稍领略一下JS面向对象编程的魅力。</p>
+<h3 id="面向对象编程必须了解的术语"><a href="#面向对象编程必须了解的术语" class="headerlink" title="面向对象编程必须了解的术语"></a>面向对象编程必须了解的术语</h3><p><strong>Namespace 命名空间</strong><br>允许开发人员在一个独特, 应用相关的名字的名称下捆绑所有功能的容器。<br><strong>Class 类</strong><br>定义对象的特征。它是对象的属性和方法的模板定义。<br><strong>Object 对象</strong><br>类的一个实例。<br><strong>Property 属性</strong><br>对象的特征，比如颜色。<br><strong>Method 方法</strong><br>对象的能力，比如行走。<br><strong>Constructor 构造函数</strong><br>对象初始化的瞬间, 被调用的方法. 通常它的名字与包含它的类一致。<br><strong>Inheritance 继承</strong><br>一个类可以继承另一个类的特征。<br><strong>Encapsulation 封装</strong><br>一种把数据和相关的方法绑定在一起使用的方法.<br><strong>Abstraction 抽象</strong><br>结合复杂的继承，方法，属性的对象能够模拟现实的模型。<br><strong>Polymorphism 多态</strong><br>多意为‘许多’，态意为‘形态’。不同类可以定义相同的方法或属性。</p>
+<h3 id="原型编程"><a href="#原型编程" class="headerlink" title="原型编程"></a>原型编程</h3><p>由于JS目前还不存在类的概念，严格意义上来说并不符合面向编程的传统。JS中只有基于原型的编程，它不是面向对象编程中体现的风格，且行为重用（在基于类的语言中也称为继承）是通过装饰它作为原型的现有对象的过程实现的。这种模式也被称为弱类化，原型化，或基于实例的编程。</p>
+<h3 id="JS中的构造函数"><a href="#JS中的构造函数" class="headerlink" title="JS中的构造函数"></a>JS中的构造函数</h3><p>构造函数定义方式以及对象的创建：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">    //这些属性或方法一般在对象之间是不同的，</span><br><span class="line">    //所以要独自传参,否则可以放入原型中</span><br><span class="line">    this.name=name;</span><br><span class="line">    this.age=age;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 默认的原型 --&gt;</span><br><span class="line">Person.prototype=&#123;</span><br><span class="line">    contructor:Person，</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 所以如果要修改原型最好用一下两种方式 --&gt;</span><br><span class="line">&lt;!-- 原型绑定 --&gt;</span><br><span class="line">&lt;!-- 方式一 --&gt;</span><br><span class="line">Person.prototype=&#123;</span><br><span class="line">    //如果没有这句，会默认修改为constructor:Object</span><br><span class="line">    contructor:Person,</span><br><span class="line">    &lt;!-- 其他共有属性和方法--&gt;</span><br><span class="line">    specias:&apos;human&apos;,</span><br><span class="line">    walk:function()&#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 方式二（推荐）： --&gt;</span><br><span class="line">Person.prototype.specias=&apos;human&apos;;</span><br><span class="line">Person.prototype.walk=function()&#123;...&#125;</span><br><span class="line">//构建对象</span><br><span class="line">var person1=new Person(&apos;Mike&apos;,18);</span><br><span class="line">var person2=new Person(&apos;Jack&apos;,20);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -348,8 +349,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/24/idx20/" rel="next" title="jQuery及其API的实现">
-                <i class="fa fa-chevron-left"></i> jQuery及其API的实现
+              <a href="/2018/05/29/idx24/" rel="next" title="前端插件的使用方法以及基于MVC思想重构代码">
+                <i class="fa fa-chevron-left"></i> 前端插件的使用方法以及基于MVC思想重构代码
               </a>
             
           </div>
@@ -357,10 +358,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/28/idx22/" rel="prev" title="AJAX的原理及实现">
-                AJAX的原理及实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -487,7 +484,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端与后端交互的辛酸史以及JSONP的运用"><span class="nav-number">1.</span> <span class="nav-text">前端与后端交互的辛酸史以及JSONP的运用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是面向对象编程"><span class="nav-number">1.</span> <span class="nav-text">什么是面向对象编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象编程必须了解的术语"><span class="nav-number">2.</span> <span class="nav-text">面向对象编程必须了解的术语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型编程"><span class="nav-number">3.</span> <span class="nav-text">原型编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS中的构造函数"><span class="nav-number">4.</span> <span class="nav-text">JS中的构造函数</span></a></li></ol></div>
             
 
           </div>

@@ -239,6 +239,129 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/31/idx25/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/31/idx25/" itemprop="url">JavaScript面向对象编程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T11:21:11+08:00">
+                2018-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="什么是面向对象编程"><a href="#什么是面向对象编程" class="headerlink" title="什么是面向对象编程"></a>什么是面向对象编程</h3><p>面向对象编程是用抽象方式创建基于现实世界模型的一种编程模式。它是相对于 “一个程序只是一些函数的集合，或简单的计算机指令列表”的传统软件设计观念而言的，面向对象编程可以看做是一系列对象相互协作的软件设计。在OOP（Object Oriented Programming）中，每个对象能够接受消息，处理数据和发送消息给其他对象。每个对象都可以被看做是一个拥有清晰角色或责任的独立小机器。面向对象程序设计的目的是在编程中促进更好的灵活性和可维护性，在大型软件工程中广为流行。凭借其对模块化的重视，面向对象的代码开发更简单，更容易理解，相比非模块化编程方法, 它能更直接地分析, 编码和理解复杂的情况和过程。<br>JavaScript 的核心是支持面向对象的，同时它也提供了强大灵活的 OOP 语言能力，现在就让我们稍稍领略一下JS面向对象编程的魅力。</p>
+<h3 id="面向对象编程必须了解的术语"><a href="#面向对象编程必须了解的术语" class="headerlink" title="面向对象编程必须了解的术语"></a>面向对象编程必须了解的术语</h3><p><strong>Namespace 命名空间</strong><br>允许开发人员在一个独特, 应用相关的名字的名称下捆绑所有功能的容器。<br><strong>Class 类</strong><br>定义对象的特征。它是对象的属性和方法的模板定义。<br><strong>Object 对象</strong><br>类的一个实例。<br><strong>Property 属性</strong><br>对象的特征，比如颜色。<br><strong>Method 方法</strong><br>对象的能力，比如行走。<br><strong>Constructor 构造函数</strong><br>对象初始化的瞬间, 被调用的方法. 通常它的名字与包含它的类一致。<br><strong>Inheritance 继承</strong><br>一个类可以继承另一个类的特征。<br><strong>Encapsulation 封装</strong><br>一种把数据和相关的方法绑定在一起使用的方法.<br><strong>Abstraction 抽象</strong><br>结合复杂的继承，方法，属性的对象能够模拟现实的模型。<br><strong>Polymorphism 多态</strong><br>多意为‘许多’，态意为‘形态’。不同类可以定义相同的方法或属性。</p>
+<h3 id="原型编程"><a href="#原型编程" class="headerlink" title="原型编程"></a>原型编程</h3><p>由于JS目前还不存在类的概念，严格意义上来说并不符合面向编程的传统。JS中只有基于原型的编程，它不是面向对象编程中体现的风格，且行为重用（在基于类的语言中也称为继承）是通过装饰它作为原型的现有对象的过程实现的。这种模式也被称为弱类化，原型化，或基于实例的编程。</p>
+<h3 id="JS中的构造函数"><a href="#JS中的构造函数" class="headerlink" title="JS中的构造函数"></a>JS中的构造函数</h3><p>构造函数定义方式以及对象的创建：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">    //这些属性或方法一般在对象之间是不同的，</span><br><span class="line">    //所以要独自传参,否则可以放入原型中</span><br><span class="line">    this.name=name;</span><br><span class="line">    this.age=age;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 默认的原型 --&gt;</span><br><span class="line">Person.prototype=&#123;</span><br><span class="line">    contructor:Person，</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 所以如果要修改原型最好用一下两种方式 --&gt;</span><br><span class="line">&lt;!-- 原型绑定 --&gt;</span><br><span class="line">&lt;!-- 方式一 --&gt;</span><br><span class="line">Person.prototype=&#123;</span><br><span class="line">    //如果没有这句，会默认修改为constructor:Object</span><br><span class="line">    contructor:Person,</span><br><span class="line">    &lt;!-- 其他共有属性和方法--&gt;</span><br><span class="line">    specias:&apos;human&apos;,</span><br><span class="line">    walk:function()&#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 方式二（推荐）： --&gt;</span><br><span class="line">Person.prototype.specias=&apos;human&apos;;</span><br><span class="line">Person.prototype.walk=function()&#123;...&#125;</span><br><span class="line">//构建对象</span><br><span class="line">var person1=new Person(&apos;Mike&apos;,18);</span><br><span class="line">var person2=new Person(&apos;Jack&apos;,20);</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/idx24/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1454,133 +1577,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/idx15/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian YJ">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cubic Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/19/idx15/" itemprop="url">JS里的数据类型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T22:54:34+08:00">
-                2018-05-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>js里主要有7种数据类型，分别是数字类型，字符串类型，布尔类型，symbol类型，null，undefined以及对象。</strong></p>
-<h3 id="1-数字类型"><a href="#1-数字类型" class="headerlink" title="1. 数字类型"></a>1. 数字类型</h3><p>数字类型也叫‘Number’类型，js里面的数字可以为整数，也可以为小数，可以用科学计数法表示数，但不管是整数还是小数，都以64位的浮点数进行存储。数字还可以用二进制表示，比如0b111，也可用八进制表示，比如0o61或（061）,也可以用十六进制表示，比如0xaa，其中大小写没有区分。js里面小数的算数运算是不精确的，比如‘0.1+0.2=0.30000000000000004’，这点很重要，切记。还有一个特殊的数字类型NaN，它表示的是不是数字的数字，比如’a’-1的结果就是NaN。typeof NaN的结果依然是number,所以它比较特殊，并且NaN == NaN为false。</p>
-<h3 id="2-字符串类型"><a href="#2-字符串类型" class="headerlink" title="2. 字符串类型"></a>2. 字符串类型</h3><p>字符串类型也叫‘String’类型，可以用双引号或者单引号括起来。但是如果字符串中有特殊字符，如果单引号之间还要插入单引号或者双引号之间插入双引号，必须用’\’进行转义。字符串连接用’+’,数字与字符串相加结果为字符串。字符串转换为数字类型用parseInt()或parseFloat()。当字符串很长时，可以用’\’换行，但’\’后面不能有任何字；也可以用’+’连接，这是最推荐的。并且可以用ES6的模板字符串表示，即用反引号括起来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//长字符串换行</span><br><span class="line">var str=&apos;xxxxxxx&apos;+</span><br><span class="line">&apos;yyyyyyy&apos;+</span><br><span class="line">&apos;zzzzz&apos;;//这是最推荐的</span><br><span class="line"></span><br><span class="line">var str=&apos;xxxxxxx\</span><br><span class="line">yyyyyyy\</span><br><span class="line">zzzzz&apos;;//&apos;\&apos;后面不能有任何字符</span><br><span class="line"></span><br><span class="line">var str=`xxxxxxx</span><br><span class="line">yyyyyyy</span><br><span class="line">zzzzz`;//可以自由书写，但是换行和空格是包含在字符串中的。</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-布尔类型"><a href="#3-布尔类型" class="headerlink" title="3. 布尔类型"></a>3. 布尔类型</h3><p>布尔类型也叫‘Boolean’类型，只有两个值，分别为true和false。在条件语句如’if’中的条件表达式，最后得到的值必须为布尔类型，所以其他类型的数据在条件表达式中会隐式地转换为布尔类型。例如’’,0,undefined,null等会转换为false。</p>
-<h3 id="4-symbol类型"><a href="#4-symbol类型" class="headerlink" title="4. symbol类型"></a>4. symbol类型</h3><p>symbol是ES6引入的一个新的数据类型。’Symbol()’可以创建一个独一无二的值，但它不是字符串。typeof Symbol()的结果是Symbol。可以在创建Symbol的时候给每个Symbol起一个名字，比如Symbol(‘XXX’),但是Symbol的值和名字并没有一一对应的关系，也就是说Symbol(‘a’) != Symbol(‘a’)为true。总之，Symbol会生成一个全局唯一的值。</p>
-<h3 id="5-undefined"><a href="#5-undefined" class="headerlink" title="5. undefined"></a>5. undefined</h3><p>当变量声明之后未被赋值，变量的初始值默认是undefined。如果要给非对象的变量赋值，推荐使用undefined，只要用var xxx声明下就好了。</p>
-<h3 id="6-null"><a href="#6-null" class="headerlink" title="6. null"></a>6. null</h3><p>typeof null的结果是object，这个很特殊，切记。null通常用于对象变量的初始化赋值。那么除了赋值使用上的不同之外，undefined和null之间还有哪些区别呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">null == undefined //结果为true</span><br><span class="line">null === undefined //结果为false</span><br></pre></td></tr></table></figure></p>
-<h3 id="7-对象"><a href="#7-对象" class="headerlink" title="7. 对象"></a>7. 对象</h3><p>js中除了以上6中数据类型，其他都是对象。函数也是对象，但是typeof fn结果为function。js中没有Array以及json类型，它们都是对象。对象的实质是哈希表，有一个个键值对组成的集合，没有顺序可言。获取对象所有键的API是Object.keys(),遍历对象的语句是for…in循环。</p>
-<h3 id="8-能准确判断数据类型的一个方法"><a href="#8-能准确判断数据类型的一个方法" class="headerlink" title="8. 能准确判断数据类型的一个方法"></a>8. 能准确判断数据类型的一个方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.toString.call(&apos;abc&apos;)     //&quot;[object String]&quot;</span><br><span class="line">Object.prototype.toString.call(123)       //&quot;[object Number]&quot;</span><br><span class="line">Object.prototype.toString.call(true)      //&quot;[object Boolean]&quot;</span><br><span class="line">Object.prototype.toString.call(undefined) //&quot;[object Undefined]&quot;</span><br><span class="line">Object.prototype.toString.call(null)      //&quot;[object Null]&quot;</span><br><span class="line"></span><br><span class="line">Object.prototype.toString.call(&#123;&#125;)        //&quot;[object Object]&quot;</span><br><span class="line">Object.prototype.toString.call([])        //&quot;[object Array]&quot;</span><br><span class="line">Object.prototype.toString.call(function()&#123;&#125;) //&quot;[object Function]&quot;</span><br><span class="line"></span><br><span class="line">//根据以上内容自己封装一个判断数据类型的API</span><br><span class="line">var valide = (function()&#123;</span><br><span class="line">    // 是否是字符串</span><br><span class="line">    function isString(value)&#123;</span><br><span class="line">        return Object.prototype.toString.call(value) == &quot;[object String]&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    // 是否是数字</span><br><span class="line">    function isNumber(value)&#123;</span><br><span class="line">        return Object.prototype.toString.call(value) == &quot;[object Number]&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    // 是否undefined</span><br><span class="line">    function isUndefined(value)&#123;</span><br><span class="line">        return Object.prototype.toString.call(value) == &quot;[object Undefined]&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    // 是否是null</span><br><span class="line">    function isNull(value)&#123;</span><br><span class="line">        return Object.prototype.toString.call(value) == &quot;[object Null]&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    // 是否是布尔值</span><br><span class="line">    function isBoolean(value)&#123;</span><br><span class="line">        return Object.prototype.toString.call(value) == &quot;[object Boolean]&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    // 是否是对象</span><br><span class="line">    function isObject(value)&#123;</span><br><span class="line">        return Object.prototype.toString.call(value) == &quot;[object Object]&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    // 是否数组</span><br><span class="line">    function isArray(value)&#123;</span><br><span class="line">        return Object.prototype.toString.call(value) == &quot;[object Array]&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    // 是否是函数</span><br><span class="line">    function isFunction(value)&#123;</span><br><span class="line">        return Object.prototype.toString.call(value) == &quot;[object Function]&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    // 是否是正则表达式</span><br><span class="line">    function isRegExp(value)&#123;</span><br><span class="line">        return Object.prototype.toString.call(value) == &quot;[object RegExp]&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    // 是否是日期对象</span><br><span class="line">    function isDate(value)&#123;</span><br><span class="line">        return Object.prototype.toString.call(value) == &quot;[object Date]&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1635,7 +1631,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
