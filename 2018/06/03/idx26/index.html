@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="linux常用命令1234ls 用于列出当前目录下的所有不以.开头命名的文件和目录cat 用于查看文件内容mv 用于移动文件或文件重命名touch 用于新建文件或修改文件最后跟新时间 遇到其他不懂的命令可以访问explainshell.com这个网站，输入相应的命令以及参数，就会有相应的解释出现。">
-<meta name="keywords" content="linux">
+<meta name="description" content="什么是cookie?cookie是浏览器访问服务器后，服务器传给浏览器的一段数据，一般是与用户信息相关的数据浏览器收到cookie之后，会存储在本地硬盘中，但是可能会经过一段时间后删除。之后浏览器再次访问这个服务器（同个域名下），都会携带这个cookie里面的数据。cookie可以被用户手动更改，也可以用JS更改，所以后端不能相信浏览器传过来的cookie，必须予以验证 cookie的作用cook">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux常用命令">
-<meta property="og:url" content="http://yoursite.com/2018/05/11/idx3/index.html">
+<meta property="og:title" content="cookie以及登录注册背后的故事">
+<meta property="og:url" content="http://yoursite.com/2018/06/03/idx26/index.html">
 <meta property="og:site_name" content="Cubic Blog">
-<meta property="og:description" content="linux常用命令1234ls 用于列出当前目录下的所有不以.开头命名的文件和目录cat 用于查看文件内容mv 用于移动文件或文件重命名touch 用于新建文件或修改文件最后跟新时间 遇到其他不懂的命令可以访问explainshell.com这个网站，输入相应的命令以及参数，就会有相应的解释出现。">
+<meta property="og:description" content="什么是cookie?cookie是浏览器访问服务器后，服务器传给浏览器的一段数据，一般是与用户信息相关的数据浏览器收到cookie之后，会存储在本地硬盘中，但是可能会经过一段时间后删除。之后浏览器再次访问这个服务器（同个域名下），都会携带这个cookie里面的数据。cookie可以被用户手动更改，也可以用JS更改，所以后端不能相信浏览器传过来的cookie，必须予以验证 cookie的作用cook">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-11T09:16:04.217Z">
+<meta property="og:image" content="http://yoursite.com/2018/06/03/idx26/regandlog.png">
+<meta property="og:updated_time" content="2018-06-03T09:35:07.655Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux常用命令">
-<meta name="twitter:description" content="linux常用命令1234ls 用于列出当前目录下的所有不以.开头命名的文件和目录cat 用于查看文件内容mv 用于移动文件或文件重命名touch 用于新建文件或修改文件最后跟新时间 遇到其他不懂的命令可以访问explainshell.com这个网站，输入相应的命令以及参数，就会有相应的解释出现。">
+<meta name="twitter:title" content="cookie以及登录注册背后的故事">
+<meta name="twitter:description" content="什么是cookie?cookie是浏览器访问服务器后，服务器传给浏览器的一段数据，一般是与用户信息相关的数据浏览器收到cookie之后，会存储在本地硬盘中，但是可能会经过一段时间后删除。之后浏览器再次访问这个服务器（同个域名下），都会携带这个cookie里面的数据。cookie可以被用户手动更改，也可以用JS更改，所以后端不能相信浏览器传过来的cookie，必须予以验证 cookie的作用cook">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/03/idx26/regandlog.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/11/idx3/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/03/idx26/"/>
 
 
 
 
 
-  <title>linux常用命令 | Cubic Blog</title>
+  <title>cookie以及登录注册背后的故事 | Cubic Blog</title>
   
 
 
@@ -243,7 +245,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/idx3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/03/idx26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian YJ">
@@ -260,7 +262,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux常用命令</h1>
+          <h1 class="post-title" itemprop="name headline">cookie以及登录注册背后的故事</h1>
         
 
         <div class="post-meta">
@@ -272,8 +274,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T15:38:05+08:00">
-                2018-05-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T16:40:57+08:00">
+                2018-06-03
               </time>
             
 
@@ -315,8 +317,9 @@
       
 
       
-        <h2 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls 用于列出当前目录下的所有不以.开头命名的文件和目录</span><br><span class="line">cat 用于查看文件内容</span><br><span class="line">mv 用于移动文件或文件重命名</span><br><span class="line">touch 用于新建文件或修改文件最后跟新时间</span><br></pre></td></tr></table></figure>
-<h2 id="遇到其他不懂的命令"><a href="#遇到其他不懂的命令" class="headerlink" title="遇到其他不懂的命令"></a>遇到其他不懂的命令</h2><p>可以访问explainshell.com这个网站，输入相应的命令以及参数，就会有相应的解释出现。</p>
+        <h3 id="什么是cookie"><a href="#什么是cookie" class="headerlink" title="什么是cookie?"></a>什么是cookie?</h3><p><strong>cookie是浏览器访问服务器后，服务器传给浏览器的一段数据，一般是与用户信息相关的数据</strong><br><strong>浏览器收到cookie之后，会存储在本地硬盘中，但是可能会经过一段时间后删除。</strong><br><strong>之后浏览器再次访问这个服务器（同个域名下），都会携带这个cookie里面的数据。</strong><br><strong>cookie可以被用户手动更改，也可以用JS更改，所以后端不能相信浏览器传过来的cookie，必须予以验证</strong></p>
+<h3 id="cookie的作用"><a href="#cookie的作用" class="headerlink" title="cookie的作用"></a>cookie的作用</h3><p>cookie一般用于服务器识别用户身份以及记录用户的历史操作。<br><strong>识别用户身份：</strong><br>    当用户在某个网站注册成功并首次登录后，该网站服务器会根据用户注册信息发给用户浏览器一段数据，这就是cookie，里面包含了该用户特有的信息，比如注册时的用户名以及注册ID等（各个网站有所不同，但一般利用这段数据能够在后台服务器数据库中唯一确定一个用户），之后用户再次登录或访问该网站中的其他页面时，都会携带这段cookie数据，这样就免去了用户频繁登录操作，服务器还能根据用户的身份对其展示不同的网页内容，提升用户体验。<br><strong>记录历史操作</strong><br>    当我们在访问购物网站时，这些网站一般都会有购物车功能，这是如何实现的呢？它还是用到了cookie，当我们将一个商品放入购物车后，网站就会利用js改写我们浏览器本地的cookie，比如添加购物车里的商品数据，这样，当我们关闭网页或者隔几天再来访问时，就会发现我们的购物车中依然保留了之前挑选的商品。这就是cookie记录用户历史操作的一个很好的例子。</p>
+<h3 id="发生在登录注册背后的故事"><a href="#发生在登录注册背后的故事" class="headerlink" title="发生在登录注册背后的故事"></a>发生在登录注册背后的故事</h3><p>用户在访问一个新的网站时，该网站可能要求用户先注册，在注册页面，用户键入注册必需的信息，比如用户名，密码，邮箱等，当点击确定或提交之后，网页就会携带用户注册的信息向服务器发起一个POST请求，服务器拿到POST请求里的数据之后，首先会校验数据的格式是否正确，比如邮箱的格式，密码的格式等等，如果校验通过，则会比对数据库，如果数据库中不存在相同的注册数据时，会给用户返回注册成功的信息。很多网站在用户注册成功之后就自动跳转到首页，而有的会要求用户用注册好的身份重新登录，所以在用户注册成功或者首次登录之后，服务器会根据用户的注册信息传给用户浏览器一段cookie数据，里面包含可用户身份等一些信息，之后用户再次登录或者访问该网站其他页面时，都会在请求头里面携带这段cookie数据，免去了用户频繁登录的操作。文字介绍就到这里了，接下来给张图示意一下：<br><img src="/2018/06/03/idx26/regandlog.png" alt="注册登录"></p>
 
       
     </div>
@@ -334,7 +337,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -347,8 +350,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/11/idx2/" rel="next" title="几个小问题">
-                <i class="fa fa-chevron-left"></i> 几个小问题
+              <a href="/2018/05/31/idx25/" rel="next" title="JavaScript面向对象编程">
+                <i class="fa fa-chevron-left"></i> JavaScript面向对象编程
               </a>
             
           </div>
@@ -356,10 +359,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/11/idx4/" rel="prev" title="git入门三命令">
-                git入门三命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -486,7 +485,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux常用命令"><span class="nav-number">1.</span> <span class="nav-text">linux常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到其他不懂的命令"><span class="nav-number">2.</span> <span class="nav-text">遇到其他不懂的命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是cookie"><span class="nav-number">1.</span> <span class="nav-text">什么是cookie?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie的作用"><span class="nav-number">2.</span> <span class="nav-text">cookie的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发生在登录注册背后的故事"><span class="nav-number">3.</span> <span class="nav-text">发生在登录注册背后的故事</span></a></li></ol></div>
             
 
           </div>
