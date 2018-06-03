@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Cubic Blog">
 <meta property="og:description" content="购买VPS在国内网络“走投无路”想要科学上网，可以在国外买个VPS（虚拟专用主机），让它作为你科学上网的代理服务器。推荐狠心一把在Vultr充点钱，就可以随时随地部署你的VPS了。Vultr是美国的一个VPS服务商，可以一键部署服务器，采用小时计费制，不要被包月骗了。怎么说呢，Vultr实际上是折算成小时来计费的，比如服务器是5美元1个月，那么每小时收费为5/30/24=0.0069美元 会自动从">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-29T09:14:01.517Z">
+<meta property="og:updated_time" content="2018-06-03T09:44:55.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="现在来说一说科学上网吧">
 <meta name="twitter:description" content="购买VPS在国内网络“走投无路”想要科学上网，可以在国外买个VPS（虚拟专用主机），让它作为你科学上网的代理服务器。推荐狠心一把在Vultr充点钱，就可以随时随地部署你的VPS了。Vultr是美国的一个VPS服务商，可以一键部署服务器，采用小时计费制，不要被包月骗了。怎么说呢，Vultr实际上是折算成小时来计费的，比如服务器是5美元1个月，那么每小时收费为5/30/24=0.0069美元 会自动从">
@@ -316,10 +316,22 @@
 
       
         <h3 id="购买VPS"><a href="#购买VPS" class="headerlink" title="购买VPS"></a>购买VPS</h3><p>在国内网络“走投无路”想要科学上网，可以在国外买个VPS（虚拟专用主机），让它作为你科学上网的代理服务器。推荐狠心一把在<a href="https://my.vultr.com" target="_blank" rel="noopener">Vultr</a>充点钱，就可以随时随地部署你的VPS了。Vultr是美国的一个VPS服务商，可以一键部署服务器，采用小时计费制，不要被包月骗了。怎么说呢，Vultr实际上是折算成小时来计费的，比如服务器是5美元1个月，那么每小时收费为5/30/24=0.0069美元 会自动从账号中扣费，只要保证账号有钱即可~而费用计算是从你开通时开始计算的，不管你有没有使用都会扣费，即使你处于关机状态，唯一停止计费的方法是Destroy掉这个服务器！<br>个人使用的话2.5每月1月的VPS就够了，每人按照自己具体需求购买相应的VPS吧，反正花钱越多上网越科学。尽量选择新加坡或者美国洛杉矶吧，日本的经常被墙，不知道为什么，美国其他州大都在美国东海岸，离我们大中华比较远，尽量不要选吧。但是最近2.5美元的好像被抢完了，只能选了纽约，我也是MMP了。操作系统选个熟悉的吧，我选的是ubuntu16.04的，总之按照熟悉的来，其他也没什么问题。如果你只是科学上网而不是将它当做网站服务器的话，Additional Features里面选择Enale IPV6 以及Enable Private Network两个选项就好了。之后就直接deploy now，生成实例后点击去就能看到IP和密码，下载一个xshell可以连上VPS从而远程操作它，我试了用putty连，MMP就是卡~，所以用xshell吧。</p>
-<h3 id="在VPS上搭建SS代理"><a href="#在VPS上搭建SS代理" class="headerlink" title="在VPS上搭建SS代理"></a>在VPS上搭建SS代理</h3><p>用xshell连上VPS后，下载一键搭建ss脚本文件，这是我从flyzx小站上copy过来的，用着挺顺溜，推荐给大家，当然小站讲的比我好多了，我的blog是只是作为自己的笔记而已，大家有兴趣可以访问<a href="https://www.flyzy2005.com" target="_blank" rel="noopener">flyzx小站</a>。言归正传，下载ss脚本文件，命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/flyzy2005/ss-fly</span><br></pre></td></tr></table></figure></p>
-<p>一般VPS是安装有git的，如果没有，就酱紫…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get -y install git //Ubuntu或者Debian</span><br><span class="line">yum -y install git //centOS</span><br></pre></td></tr></table></figure></p>
-<p>我很阴险地把它fork到自己的github账户中了，所以可以…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/qianyuanjia/ss-fly</span><br></pre></td></tr></table></figure></p>
-<p>下载好ss文件后，就运行它，酱紫…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ss-fly/ss-fly.sh -i flyzy2005.com 1024</span><br><span class="line">//flyzy2005.com是密码，自己改吧，1024是服务器端口，自己可以改个顺眼的</span><br></pre></td></tr></table></figure></p>
+<h3 id="在VPS上搭建SS代理"><a href="#在VPS上搭建SS代理" class="headerlink" title="在VPS上搭建SS代理"></a>在VPS上搭建SS代理</h3><p>用xshell连上VPS后，下载一键搭建ss脚本文件，这是我从flyzx小站上copy过来的，用着挺顺溜，推荐给大家，当然小站讲的比我好多了，我的blog是只是作为自己的笔记而已，大家有兴趣可以访问<a href="https://www.flyzy2005.com" target="_blank" rel="noopener">flyzx小站</a>。言归正传，下载ss脚本文件，命令如下：</p>
+<blockquote>
+<p><strong>git clone <a href="https://github.com/flyzy2005/ss-fly" target="_blank" rel="noopener">https://github.com/flyzy2005/ss-fly</a></strong></p>
+</blockquote>
+<p>一般VPS是安装有git的，如果没有，就酱紫…</p>
+<blockquote>
+<p>apt-get -y install git //Ubuntu或者Debian<br>yum -y install git //centOS</p>
+</blockquote>
+<p>我已经把它fork到自己的github账户中了，所以可以…</p>
+<blockquote>
+<p>git clone <a href="https://github.com/qianyuanjia/ss-fly" target="_blank" rel="noopener">https://github.com/qianyuanjia/ss-fly</a></p>
+</blockquote>
+<p>下载好ss文件后，就运行它，酱紫…</p>
+<blockquote>
+<p><strong>ss-fly/ss-fly.sh -i flyzy2005.com 1024</strong><br>//flyzy2005.com是密码，自己改吧，1024是服务器端口，自己可以改个顺眼的</p>
+</blockquote>
 <p>安装完后，命令交互信息中最后会有如下信息，表明你成功啦！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[成功] 安装成功尽情冲浪！</span><br><span class="line">你的服务器地址（IP）： 149.82.36.165 </span><br><span class="line">你的密码            ： flyzy2005.com </span><br><span class="line">你的端口            ： 1024 </span><br><span class="line">你的加密方式        ： aes-256-cfb </span><br><span class="line">欢迎访问flyzy小站   ： https://www.flyzy2005.com</span><br></pre></td></tr></table></figure></p>
 <p>注：如果需要改密码或者改端口，只需要重新再执行一次搭建ss脚本代码就可以了，或者修改/etc/shadowsocks.json这个配置文件。<br>最后，可以风骚地冲浪啦~</p>
 <h3 id="存个快照"><a href="#存个快照" class="headerlink" title="存个快照"></a>存个快照</h3><p>如果你在VPS添加了很多设置，不妨存个快照，当新部署一个VPS的时候，可以恢复这个快照，省去你很多的麻烦。存快照不要太容易，不讲啦！</p>
