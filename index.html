@@ -239,6 +239,131 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/idx30/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/05/idx30/" itemprop="url">聊一聊BFC</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-05T15:43:09+08:00">
+                2018-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>BFC的英文全称是Block Formatting Context，中文翻译过来就是‘块级格式化上下文’。很难理解这个别扭的名称到底是什么意思，能不能给BFC下个定义，MDN对BFC的描述是这样的，一个块格式化上下文（block formatting context） 是Web页面的可视化CSS渲染出的一部分。它是块级盒布局出现的区域，也是浮动层元素进行交互的区域。我想一百个人中有九十九个对这句话是懵逼的，剩下的一个是不懂装懂…<br>即使写CSS很牛的人也不能说明白BFC是什么？这是一种只能意会不能言传的东西了，就像一个大法官说的，我不知道什么是色情，但是如果给我看，我可以告诉你这是不是色情。<br>我们不知道什么是BFC，但是我们可以知道哪些元素是BFC以及BFC的功能是什么，对前端来说，知道这些就已经足够了。</p>
+<h3 id="什么样的元素可以成为BFC"><a href="#什么样的元素可以成为BFC" class="headerlink" title="什么样的元素可以成为BFC"></a>什么样的元素可以成为BFC</h3><p>一句话概括就是：<br>浮动，绝对定位元素，非块盒的块容器（例如，inline-blocks，table-cells和table-captions）和’overflow’不为’visible’的块盒会为它们的内容建立一个新的块格式化上下文。<br>如果具体展开讲的话就是满足一下任意条件之一的元素就是BFC:</p>
+<blockquote>
+<p>根元素或其它包含它的元素<br>浮动元素 (元素的 float 不是 none)<br>绝对定位元素 (元素具有 position 为 absolute 或 fixed)<br>内联块 (元素具有 display: inline-block)<br>表格单元格 (元素具有 display: table-cell，HTML表格单元格默认属性)<br>表格标题 (元素具有 display: table-caption, HTML表格标题默认属性)<br>具有overflow 且值不是 visible 的块元素，<br>display: flow-root<br>column-span: all 应当总是会创建一个新的格式化上下文，即便具有 column-span: all 的元素并不被包裹在一个多列容器中。</p>
+</blockquote>
+<h3 id="BFC有什么功能"><a href="#BFC有什么功能" class="headerlink" title="BFC有什么功能"></a>BFC有什么功能</h3><p><strong>1.BFC可以包住它内部的所有元素，除了其内部BFC中的元素。</strong><br>打个比方说就是爸爸管儿子。实际应用到的场景就是包住浮动元素，我们一般用.clearfix清除浮动，但是用BFC也可以实现相同的功能，但是由于CSS的不正交，比如当我们使用overflow:hidden使父元素成为BFC从而包住浮动元素，但同时给父元素带来一些其他的特性，比如超出父元素的元素隐藏，这也许不是我们想要的，CSS3新出的display：flow-root可以没有副作用地使元素触发BFC，但是很多高级浏览器也不支持，因此还不能广泛使用，所以用BFC清除浮动往往不是我们的最佳选择。<br><strong>2.BFC元素之间可以划清界限</strong><br>比如在做左右布局时，左边元素浮动了，右边元素没有浮动，那么左边元素会浮在右边元素之上，并且右边元素中的文字就会环绕在左边元素周围，显得不清不楚，要想避免这种情况，可以使右边元素成为BFC，比如加上display:flow-root之后就可以使左右元素很好地区分开来。<br>总之，BFC可以使BFC内部元素不脱离父元素的掌控，内部元素不管怎么翻江倒海也不影响外部，外部元素也不会干扰到内部元素的布局。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/idx29/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1387,130 +1512,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/idx20/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian YJ">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cubic Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/24/idx20/" itemprop="url">jQuery及其API的实现</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T20:16:16+08:00">
-                2018-05-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>首先我们来写一个给节点对象添加样式类的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function addClass(node,classArr)&#123;</span><br><span class="line">   for(let i=0;i&lt;classArr.length;i++)&#123;</span><br><span class="line">    node.classList.add(classArr)</span><br><span class="line">   &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上封装函数的函数虽然简单，但是存在一个问题，当我们封装很多这样的工具函数的时候，相当于在全局作用域下声明了很多变量，但是别人不知道我们声明了哪些变量，很容易引发变量名冲突覆盖的问题，于是我们引入了命名空间的方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//命名空间封装函数</span><br><span class="line">var dom=&#123;&#125;</span><br><span class="line">dom.addClass=function(node,classArr)&#123;</span><br><span class="line">   for(let i=0;i&lt;classArr.length;i++)&#123;</span><br><span class="line">    node.classList.add(classArr)</span><br><span class="line">   &#125; </span><br><span class="line">&#125;</span><br><span class="line">dom.getSiblings=function()&#123;...&#125;</span><br></pre></td></tr></table></figure></p>
-<p>采用命名空间的方式相当于在全局作用域下只暴露了一个全局变量，大大减小了变量冲突的可能性，但是使用函数的时候需要写一长串的函数名，比如dom.addClass(node,[‘a’,’b’,’c’]),我们习惯使用node.addClass([‘a’,’b’,’c’]),因此可以换一种方式封装函数，我们将封装的函数放在Node的原型下，由于所有的DOM对象都继承这个Node原型，所以所有的DOM都可以用我们习惯的方式使用这个函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//封装函数放在Node原型中</span><br><span class="line">Node.prototype.addClass=function(node,classArr)&#123;</span><br><span class="line">   for(let i=0;i&lt;classArr.length;i++)&#123;</span><br><span class="line">    node.classList.add(classArr)</span><br><span class="line">   &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>但是JS有许多函数库，如果每个函数库都在Node原型中封装函数，迟早会打架，于是每个函数库就在window全局对象下另起一个门户，比如jQuery就在window对象中声明了一个jQuery构造函数，作为使用jQuery众多API的入口。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function(nodeOrSelector)&#123;</span><br><span class="line">    let nodes=&#123;&#125;</span><br><span class="line">    //判断传入的是选择器还是node对象</span><br><span class="line">    if(typeof nodeOrSelector === &apos;string&apos;)&#123;</span><br><span class="line">        nodes=document.querySelectorAll(nodeOrSelector)</span><br><span class="line">    &#125;else if(nodeOrSelector instanceof Node)&#123;</span><br><span class="line">        //即使是node对象，也要将其封装为一个伪数组，以免返回值不同引发混淆</span><br><span class="line">        nodes=&#123;</span><br><span class="line">            0:nodeOrSelector,</span><br><span class="line">            length:1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.addClass=function(className)&#123;</span><br><span class="line">        for(let i=0;i&lt;nodes.length;i++)&#123;</span><br><span class="line">            nodes[i].classList.add(className)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.setText=function()&#123;</span><br><span class="line">          for(let i=0;i&lt;nodes.length;i++)&#123;</span><br><span class="line">            nodes[i].textContent=&apos;hi&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return nodes</span><br><span class="line">&#125;</span><br><span class="line">window.$ = jQuery //给jQuery起一个别名</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;hi&apos;) // 可将所有 div 的 textContent 变为 hi</span><br></pre></td></tr></table></figure></p>
-<p>jQuery()可以传入一个node对象或者各种选择器，返回一个包含node对象的伪数组，它是一个对象，它的属性中含有jQuery的各种API。与真正的jQuery不同的是，真正的jQuery将各种工具函数声明在jQuery原型中，不用为每个jQuery对象都保存一份相同的API。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1565,7 +1566,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
