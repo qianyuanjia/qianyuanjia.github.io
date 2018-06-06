@@ -239,6 +239,128 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/idx21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian YJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubic Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/24/idx21/" itemprop="url">JSONP原理及实现</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T22:57:17+08:00">
+                2018-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前端与后端交互的辛酸史以及JSONP的运用"><a href="#前端与后端交互的辛酸史以及JSONP的运用" class="headerlink" title="前端与后端交互的辛酸史以及JSONP的运用"></a>前端与后端交互的辛酸史以及JSONP的运用</h3><p>前端程序员在早些的时候一般通过表单的方式将请求或更改的数据发送给后端，但是表单提交后，不管成功与失败，都要跳转到另一个页面，在另一个页面上呈现提交的结果，一般是“sucess”或者“fail”，用户为了看到这么两个单词必须等待一个新的页面打开，并且按历史回退到原来的页面，并且通常看到的还是缓存的旧页面，还要进行刷新才能看到操作之后页面的变化，所以用户体验超级超级差！于是悲催的前端程序员不得不为了提升用户体验绞尽脑汁想办法！<br><strong>改进一：怎样让表单提交之后不跳转页面</strong><br>机智的程序员在页面中嵌入一个iframe，将表单的target指向这个iframe的名字，于是表达提交之后就乖乖的在iframe中跳转了，并且用户能看到“sucess”或者“fail”，不错，于是为了提升客户那么一丢丢的体验，在很长一段时间内前端页面就是通过嵌入iframe的方式阻止表单提交后跳转的。但是用户还是得在表单提交之后重新刷新页面才能看到操作后的结果，程序员还得继续努力啊！<br><strong>改进二：听说img标签可以实现无刷新请求后端数据</strong><br>纳尼！这都可以！令人窒息的操作！是的，通过js代码动态创建一个img标签，然后将img的src指向后端服务器的某个路径，那么img就可以向后端服务器发起GET请求了，请注意，只能是GET请求，并且img标签无需插入到页面中也能发请求。哇塞！不错，但是怎么判断我请求成功还是失败了呢？听说一般加载资源都可以通过onload和onerror事件处理加载成功与失败的情况，这里好像同样适用。<br>这两个事件是如何判断资源请求成功与失败呢，是根据服务器响应传回的状态码进行判断，2XX表示成功，3XX表示重定向，4XX客户端错误，5XX服务器错误，一般返回2XX说明我们请求成功了，4XX就是失败了。但是img标签默认请求的是图片资源，如果我们想拿回文本数据，那么一般会请求失败，所以后端需要将数据类型进行伪装，设置“Content-Type”为“image/jpg”或”image/png”等图片MIME类型就好啦，有一种偷梁换柱，暗度陈仓的赶脚。拿回数据后你想怎么干就怎么干啦。但是哦，img标签必须需要后台配合伪装数据，那浏览器端拿到数据不就傻眼啦？这是图片呢还是图片呢还是图片呢，于是，于是，我们的JSONP就终于登场啦！<br><strong>改进三：闪亮登场的JSONP</strong><br>img有src，而script也有src，那么按道理script也可以请求后端数据，事实的确如此。我们通过js代码动态创建script标签，然后将它的src指向后端服务器上的某个路径，就能向后端服务器发起请求了吗？还不行，记住必须将script插入到页面中，否则不能发起请求。script插入页面中后，就会向后端发起请求，当请求成功并拿回数据后，就会插入script标签中，并且浏览器会将这段数据当做js代码执行，如果给script绑定了onload事件，之后就会执行这个事件中的逻辑。既然拿回数据后会当做js代码执行，那么onload事件就不是必须的了，只要将onload中的逻辑放到从后端拿回的数据中就好啦。但是这样做的话，后端程序员就哭啦，我不知道你前端写了啥，但我必须了解你的东西还要写点东西给你，请让我哭一会。好，这就叫做前端与后端的耦合，不了深入了解对方休想干事，于是前端了解了后端的苦楚之后，决定在src中多传你一个参数，参数值是一个前端定义好的函数名，后端只要将返回的数据当做第一个参数传到这个函数中，并且以字符串的形式返回给我，不需要后端做其他的，这就是解耦合啦。过程是这样的…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//前端</span><br><span class="line">var oScript=document.createElement(&apos;script&apos;);</span><br><span class="line">oScript.src=&quot;//jack.com/pay?callback=fn&quot;;</span><br><span class="line">function fn()&#123;</span><br><span class="line">    ....</span><br><span class="line">    逻辑代码</span><br><span class="line">&#125;</span><br><span class="line">//后端</span><br><span class="line">response.write(`fn.call(undefined,&#123;</span><br><span class="line">        &apos;name&apos;:&apos;jack&apos;,</span><br><span class="line">        &apos;age&apos;:&apos;18&apos;</span><br><span class="line">    &#125;)`);</span><br><span class="line">//后端返回的数据一般是JSON类型的，JSON前后有内容，</span><br><span class="line">所谓的JSON+padding，因此起了一个“JSONP”的莫名其妙</span><br><span class="line">的名字。通常函数名fn是通过后端解析查询参数得到的，</span><br><span class="line">所以后端程序员连传入的函数名都可以一无所知就完成</span><br><span class="line">他的工作，因此他们解放了，前端还得继续苦逼。</span><br></pre></td></tr></table></figure></p>
+<p><strong>JSONP是基于动态创建script标签的，并且只能支持GET请求不支持POST请求</strong>。请求成功并且执行完后通常需要将页面中动态插入的script标签删除。前端传入的函数名一般是随机的，每次传入都会有所不同，可以写成如下方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var fName=&apos;frank&apos;+parseInt(Math.random()*1000000);</span><br><span class="line">window[fName]=function()&#123;</span><br><span class="line">    处理逻辑...</span><br><span class="line">    delete window[fName];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>详细的代码可以访问：<a href="https://github.com/qianyuanjia/jsonp" target="_blank" rel="noopener">代码链接</a><br><strong>jQuery帮我们封装了JSONP</strong><br>jQuery一开始将JSONP封装在了ajax中，有点迷，后来又独立出来了，但是ajax实现方式还能用，不需要自己动态创建script，也不需要创建随机函数，jQuery已经疯转好了，代码演示如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url:&apos;http://jack.com/pay&apos;,</span><br><span class="line">    dataType:&apos;jsonp&apos;,</span><br><span class="line">    success:function()&#123;</span><br><span class="line">        处理逻辑...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/idx20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1554,138 +1676,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/14/idx11/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian YJ">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cubic Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/14/idx11/" itemprop="url">CSS布局技巧总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T20:02:46+08:00">
-                2018-05-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-左右布局"><a href="#1-左右布局" class="headerlink" title="1. 左右布局"></a>1. 左右布局</h3><p>左右布局实现方法有很多，常用的就是给块元素添加浮动，而父元素需要清除浮动，不然会高度塌缩。常见的左右布局实现方法如下，<a href="http://js.jirengu.com/dijamacamo/3/" target="_blank" rel="noopener">效果链接</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    .clearfix::after&#123;</span><br><span class="line">      content:&apos;&apos;;</span><br><span class="line">      display:block;</span><br><span class="line">      clear:both;</span><br><span class="line">    &#125;</span><br><span class="line">    .left &#123;</span><br><span class="line">      width:25%;</span><br><span class="line">      height:600px;</span><br><span class="line">      background: green;</span><br><span class="line">      float:left;</span><br><span class="line">    &#125;</span><br><span class="line">    .right&#123;</span><br><span class="line">      width:75%;</span><br><span class="line">      height:600px;</span><br><span class="line">      background: blue;</span><br><span class="line">      float:left;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;box clearfix&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;left&quot;&gt;侧边栏&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;right&quot;&gt;主体区&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-左中右布局"><a href="#2-左中右布局" class="headerlink" title="2. 左中右布局"></a>2. 左中右布局</h3><p>可以使用浮动的方式实现，也可以用弹性盒布局的方式实现，代码如下,<a href="http://js.jirengu.com/coxux/2/" target="_blank" rel="noopener">展示链接</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">     .clearfix::after&#123;</span><br><span class="line">      content: &apos;&apos;;</span><br><span class="line">      display: block;</span><br><span class="line">      clear: both;</span><br><span class="line">    &#125;</span><br><span class="line">    .box&#123;</span><br><span class="line">      display:flex;</span><br><span class="line">    &#125;</span><br><span class="line">    .left,.right,.mid&#123;</span><br><span class="line">      float: left;</span><br><span class="line">      flex:1;</span><br><span class="line">      height:600px;</span><br><span class="line">    &#125;</span><br><span class="line">    .left&#123;</span><br><span class="line">      background: green;</span><br><span class="line">    &#125;</span><br><span class="line">    .mid&#123;</span><br><span class="line">      background: red;</span><br><span class="line">    &#125;</span><br><span class="line">    .right&#123;</span><br><span class="line">      background: blue;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;box clearfix&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;left&quot;&gt;左边&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;mid&quot;&gt;中部&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;right&quot;&gt;右边&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-水平居中的方法"><a href="#3-水平居中的方法" class="headerlink" title="3. 水平居中的方法"></a>3. 水平居中的方法</h3><p>使块元素中的内联元素居中使用text-align:center就可以实现，因此如果在不要影响其他的情况下，将块元素中的元素的display设为inline或inline-block，然后给块元素加上text-align:center就可以了。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;text-align:center;&quot;&gt;</span><br><span class="line">    &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">    &lt;p style=&quot;display:inline&quot;&gt;how are you&lt;/p&gt; </span><br><span class="line">    &lt;!--或设置为inline-block,如果需要设置宽高的话--&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>使块元素居中的方法，给块元素设置宽度，之后左右margin设为auto就可以啦。用图总结下：<br><img src="/2018/05/14/idx11/shuiping.png" alt="水平居中"></p>
-<h3 id="4-垂直居中的方法"><a href="#4-垂直居中的方法" class="headerlink" title="4. 垂直居中的方法"></a>4. 垂直居中的方法</h3><p>内联元素垂直居中可以通过line-height搭配上下padding实现，只要上下padding+行高的总和与父元素高度相等，就能实现垂直居中。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;height:30px;line-height:20px;&quot;&gt;</span><br><span class="line">    &lt;span style=&quot;font-size:16px;padding:5px 0;&quot;&gt;hello&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>块元素实现水平垂直居中可以通过绝对定位实现,然后top和left各回退自身宽高的一半。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .out&#123;</span><br><span class="line">        width:400px;</span><br><span class="line">        height:400px;</span><br><span class="line">        background:red;</span><br><span class="line">        position:relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .in&#123;</span><br><span class="line">        width:200px;</span><br><span class="line">        height:200px;</span><br><span class="line">        position:absolute;</span><br><span class="line">        top:50%;</span><br><span class="line">        left:50%;</span><br><span class="line">        margin-top:-100px;</span><br><span class="line">        margin-left:-100px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;out&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;in&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>一般情况下垂直居中的方法，用图总结下：<br><img src="/2018/05/14/idx11/chuizhi.png" alt="垂直居中"></p>
-<h3 id="5-其他注意点"><a href="#5-其他注意点" class="headerlink" title="5. 其他注意点"></a>5. 其他注意点</h3><p>当为元素设置display：inline-block时，最好搭配vertical-align:top一起设置，因为有时会出现底部空白间距的bug。能不对元素设置宽高就不要设置，宽高是很多bug的源头，尽量提高内部文档流元素宽高实现自适应。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1735,7 +1730,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
